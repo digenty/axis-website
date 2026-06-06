@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Axis — Manage your school with ease</title>
+    <meta
+      name="description"
+      content="Manage results, CBT exams, fees, attendance, and parent communication in one simple system built for modern schools."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind v4 (browser build — no build step required) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Theme: copied verbatim from the original globals.css so styling is identical -->
+    <style type="text/tailwindcss">
+      @import "tailwindcss";
+
+      @theme {
+        /* Theme variables */
+        --zinc-00: #ffffff;
+        --zinc-50: #fafafa;
+        --zinc-100: #f4f4f5;
+        --zinc-200: #e9e9eb;
+        --zinc-300: #d9d9dd;
+        --zinc-400: #a1a1a9;
+        --zinc-500: #6e6e76;
+        --zinc-600: #4d4d55;
+        --zinc-700: #35353a;
+        --zinc-800: #222225;
+        --zinc-900: #18181a;
+        --stone-00: #ffffff;
+        --zinc-950: #111115;
+        --stone-50: #f9faf9;
+        --neutral-00: #ffffff;
+        --neutral-50: #fafafa;
+        --neutral-100: #f5f5f5;
+        --neutral-200: #eaeaea;
+        --neutral-300: #d8d8d8;
+        --neutral-400: #a3a3a3;
+        --neutral-500: #737373;
+        --neutral-600: #525252;
+        --neutral-700: #3d3d3d;
+        --neutral-800: #212121;
+        --neutral-900: #191919;
+        --neutral-950: #111111;
+        --neutral-1000: #0a0a0a;
+        --gray-00: #ffffff;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #ebebef;
+        --gray-300: #d7d9df;
+        --gray-400: #9ea3ae;
+        --slate-00: #ffffff;
+        --gray-500: #6d727f;
+        --gray-600: #4d5562;
+        --gray-700: #353c4a;
+        --gray-800: #1a1f27;
+        --gray-900: #14171e;
+        --gray-950: #0c0f17;
+        --gray-1000: #07080d;
+        --slate-50: #f9fafc;
+        --slate-100: #f2f5f9;
+        --slate-200: #e8ecf2;
+        --slate-300: #d2d9e3;
+        --slate-400: #97a3b6;
+        --slate-500: #677489;
+        --slate-600: #4a5567;
+        --slate-700: #364154;
+        --slate-800: #20293a;
+        --slate-900: #101522;
+        --slate-950: #080b1a;
+        --slate-1000: #030616;
+        --stone-100: #f5f5f4;
+        --stone-200: #e7e4e3;
+        --stone-300: #d6d3d0;
+        --stone-400: #a69f9b;
+        --stone-500: #78706b;
+        --stone-600: #57524d;
+        --stone-700: #443f3b;
+        --stone-800: #312b2a;
+        --stone-900: #24201d;
+        --stone-950: #14110f;
+        --stone-1000: #0b0a09;
+        --red-50: #fcf3f3;
+        --red-100: #fae3e3;
+        --red-200: #f7cccb;
+        --red-300: #f4a6a5;
+        --red-400: #ed6563;
+        --red-500: #e74341;
+        --red-600: #d42422;
+        --red-700: #b11e1b;
+        --red-800: #911f1c;
+        --red-900: #77221f;
+        --red-950: #400e0b;
+        --orange-50: #fef8ee;
+        --orange-100: #fceed7;
+        --orange-200: #f9d8ae;
+        --orange-300: #f7bb77;
+        --orange-400: #f38f36;
+        --orange-500: #f27313;
+        --orange-600: #e35706;
+        --orange-700: #a63b0b;
+        --orange-800: #6f280f;
+        --orange-900: #441b0d;
+        --orange-950: #301007;
+        --amber-50: #fffbec;
+        --amber-100: #fdf4cb;
+        --amber-200: #fae792;
+        --amber-300: #f9d455;
+        --amber-400: #f5bd1e;
+        --amber-500: #f09e0f;
+        --amber-600: #d37709;
+        --amber-700: #ae540d;
+        --amber-800: #8c4212;
+        --amber-900: #723715;
+        --amber-950: #411c07;
+        --yellow-50: #fefcea;
+        --yellow-100: #fef9c8;
+        --yellow-200: #fcf194;
+        --yellow-300: #fbe152;
+        --yellow-400: #f5ca0f;
+        --yellow-500: #e7b413;
+        --yellow-600: #c68b0b;
+        --yellow-700: #9d630e;
+        --yellow-800: #814e13;
+        --yellow-900: #6c4118;
+        --yellow-950: #3e220b;
+        --lime-50: #f9fee9;
+        --green-50: #f3fdf5;
+        --green-100: #e2fbe8;
+        --green-200: #c6f6d2;
+        --green-300: #99efae;
+        --green-400: #66dc7e;
+        --green-500: #4fc660;
+        --green-600: #3ea44b;
+        --green-700: #33803f;
+        --green-800: #2b6536;
+        --green-900: #265330;
+        --green-950: #112d18;
+        --lime-100: #effccf;
+        --lime-200: #dff9a4;
+        --lime-300: #c7f26c;
+        --lime-400: #abe435;
+        --lime-500: #90cd22;
+        --lime-600: #6fa417;
+        --lime-700: #557c18;
+        --lime-800: #456219;
+        --lime-900: #3c531b;
+        --lime-950: #1e2e0a;
+        --emerald-50: #effdf6;
+        --emerald-100: #d9f9e6;
+        --emerald-200: #b6f2d2;
+        --emerald-300: #86e7b8;
+        --emerald-400: #56d197;
+        --emerald-500: #44ba82;
+        --emerald-600: #35966a;
+        --emerald-700: #2a7858;
+        --emerald-800: #235f47;
+        --emerald-900: #1e4e3c;
+        --emerald-950: #0e2c22;
+        --teal-50: #f3fdfa;
+        --teal-100: #d5faf2;
+        --teal-200: #adf4e5;
+        --teal-300: #7ce9d5;
+        --teal-400: #53d2be;
+        --teal-500: #44b8a7;
+        --teal-600: #359489;
+        --teal-700: #2d766f;
+        --teal-800: #255e5a;
+        --teal-900: #234e4a;
+        --teal-950: #112e2e;
+        --cyan-50: #effeff;
+        --cyan-100: #d7f9fd;
+        --cyan-200: #b5f2fb;
+        --cyan-300: #81e7fa;
+        --cyan-400: #4ad0ef;
+        --cyan-500: #3eb5d7;
+        --cyan-600: #3090b5;
+        --cyan-700: #297392;
+        --cyan-800: #275d76;
+        --cyan-900: #244d62;
+        --cyan-950: #143243;
+        --sky-50: #f2f9ff;
+        --sky-100: #e3f2fd;
+        --sky-200: #c2e5fc;
+        --sky-300: #8cd2fd;
+        --sky-400: #4db9fa;
+        --sky-500: #37a3ee;
+        --sky-600: #2982cb;
+        --sky-700: #2067a4;
+        --sky-800: #1e5886;
+        --sky-900: #1d496e;
+        --sky-950: #122e48;
+        --blue-50: #f0f6fe;
+        --blue-100: #deeafd;
+        --blue-200: #c4dafc;
+        --blue-300: #9ac4fe;
+        --blue-400: #65a0fd;
+        --blue-500: #437dfc;
+        --blue-600: #2b5df3;
+        --blue-700: #2147dd;
+        --blue-800: #213bb2;
+        --blue-900: #223889;
+        --blue-950: #192453;
+        --indigo-50: #eff2fe;
+        --indigo-100: #e1e7fd;
+        --indigo-200: #c9d2fc;
+        --indigo-300: #a6b3fd;
+        --indigo-400: #7e86fb;
+        --indigo-500: #6060f8;
+        --indigo-600: #4b3bed;
+        --indigo-700: #3f2fcf;
+        --indigo-800: #352aa5;
+        --indigo-900: #302c81;
+        --indigo-950: #1d1a4a;
+        --violet-50: #f5f3fe;
+        --violet-100: #ece9fd;
+        --violet-200: #dcd6fc;
+        --violet-300: #beaffc;
+        --violet-400: #a185fd;
+        --violet-500: #8655fd;
+        --violet-600: #762bf5;
+        --violet-700: #6717de;
+        --violet-800: #5517b9;
+        --violet-900: #471b94;
+        --violet-950: #2b0f64;
+        --purple-50: #f9f5fe;
+        --purple-100: #f1e8fd;
+        --purple-200: #e6d5fd;
+        --purple-300: #cda9fd;
+        --purple-400: #b87efe;
+        --purple-500: #a14efd;
+        --purple-600: #8c22f1;
+        --purple-700: #7712d2;
+        --purple-800: #651baa;
+        --purple-900: #521b86;
+        --purple-950: #360962;
+        --fuchsia-50: #fbf5fe;
+        --fuchsia-100: #f7e9fe;
+        --fuchsia-200: #f0d1fc;
+        --fuchsia-300: #e59cfb;
+        --fuchsia-400: #dd72fa;
+        --fuchsia-500: #cf3ff3;
+        --fuchsia-600: #b716d7;
+        --fuchsia-700: #9a15b1;
+        --fuchsia-800: #7e188f;
+        --fuchsia-900: #691d74;
+        --fuchsia-950: #44084d;
+        --pink-50: #fbf3f8;
+        --pink-100: #f9e8f3;
+        --pink-200: #f5d0e7;
+        --pink-300: #ef9ecd;
+        --pink-400: #ea6eb3;
+        --pink-500: #e34798;
+        --pink-600: #d32475;
+        --pink-700: #b61a5c;
+        --pink-800: #951b4c;
+        --pink-900: #7b1e43;
+        --pink-950: #4a0c24;
+        --rose-50: #fdf2f2;
+        --transparent-dark-00: #27272a00;
+        --transparent-dark-2: #27272a05;
+        --transparent-dark-4: #27272a0a;
+        --transparent-dark-6: #27272a0f;
+        --transparent-dark-8: #27272a14;
+        --transparent-dark-10: #27272a19;
+        --transparent-dark-15: #27272a26;
+        --transparent-dark-20: #27272a33;
+        --transparent-dark-25: #27272a3f;
+        --transparent-dark-30: #27272a4c;
+        --transparent-dark-35: #27272a59;
+        --transparent-dark-40: #27272a66;
+        --transparent-dark-45: #09090b72;
+        --transparent-dark-50: #09090b7f;
+        --transparent-dark-55: #09090b8c;
+        --transparent-dark-60: #09090b99;
+        --transparent-dark-65: #09090ba5;
+        --transparent-dark-70: #09090bb2;
+        --transparent-dark-75: #09090bbf;
+        --transparent-dark-80: #09090bcc;
+        --transparent-dark-85: #09090bd8;
+        --transparent-dark-90: #09090be5;
+        --transparent-light-00: #ffffff00;
+        --transparent-light-2: #ffffff05;
+        --transparent-light-4: #ffffff0a;
+        --transparent-light-6: #ffffff0f;
+        --transparent-light-8: #ffffff14;
+        --transparent-light-10: #ffffff19;
+        --transparent-light-15: #ffffff26;
+        --transparent-light-20: #ffffff33;
+        --transparent-light-25: #ffffff3f;
+        --transparent-light-30: #ffffff4c;
+        --transparent-light-35: #ffffff59;
+        --transparent-light-40: #ffffff66;
+        --transparent-light-45: #ffffff72;
+        --transparent-light-50: #ffffff7f;
+        --transparent-light-55: #ffffff8c;
+        --transparent-light-60: #ffffff99;
+        --transparent-light-65: #ffffffa5;
+        --transparent-light-70: #ffffffb2;
+        --transparent-light-75: #ffffffbf;
+        --transparent-light-80: #ffffffcc;
+        --transparent-light-85: #ffffffd8;
+        --transparent-light-90: #ffffffe5;
+        --transparent-red-10: #ee6e6c19;
+        --transparent-red-20: #ee6e6c33;
+        --transparent-red-30: #ee6e6c4c;
+        --transparent-red-40: #ee6e6c66;
+        --transparent-red-50: #ee6e6c7f;
+        --transparent-red-60: #ee6e6c99;
+        --transparent-red-70: #ee6e6cb2;
+        --transparent-red-80: #ee6e6ccc;
+        --transparent-red-90: #ee6e6ce5;
+        --transparent-orange-10: #f38f3619;
+        --transparent-orange-20: #f38f3633;
+        --transparent-orange-30: #f38f364c;
+        --transparent-orange-40: #f38f3666;
+        --transparent-orange-50: #f38f367f;
+        --transparent-orange-60: #f38f3699;
+        --transparent-orange-70: #f38f36b2;
+        --transparent-orange-80: #f38f36cc;
+        --transparent-orange-90: #f38f36e5;
+        --transparent-amber-10: #f5bd1e19;
+        --transparent-amber-20: #f5bd1e33;
+        --transparent-amber-30: #f5bd1e4c;
+        --transparent-amber-40: #f5bd1e66;
+        --transparent-amber-50: #f5bd1e7f;
+        --transparent-amber-60: #f5bd1e99;
+        --transparent-amber-70: #f5bd1eb2;
+        --transparent-amber-80: #f5bd1ecc;
+        --transparent-amber-90: #f5bd1ee5;
+        --transparent-yellow-10: #f5ca0f19;
+        --transparent-yellow-20: #f5ca0f33;
+        --transparent-yellow-30: #f5ca0f4c;
+        --transparent-yellow-40: #f5ca0f66;
+        --transparent-yellow-50: #f5ca0f7f;
+        --transparent-yellow-60: #f5ca0f99;
+        --transparent-yellow-70: #f5ca0fb2;
+        --transparent-yellow-80: #f5ca0fcc;
+        --transparent-yellow-90: #f5ca0fe5;
+        --transparent-lime-10: #abe43519;
+        --transparent-lime-20: #abe43533;
+        --transparent-lime-30: #abe4354c;
+        --transparent-lime-40: #abe43566;
+        --transparent-lime-50: #abe4357f;
+        --transparent-lime-60: #abe43599;
+        --transparent-lime-70: #abe435b2;
+        --transparent-lime-80: #abe435cc;
+        --transparent-lime-90: #abe435e5;
+        --transparent-green-10: #66dc7e19;
+        --transparent-green-20: #66dc7e33;
+        --transparent-green-30: #66dc7e4c;
+        --transparent-green-40: #66dc7e66;
+        --transparent-green-50: #66dc7e7f;
+        --transparent-green-60: #66dc7e99;
+        --transparent-green-70: #66dc7eb2;
+        --transparent-green-80: #66dc7ecc;
+        --transparent-green-90: #66dc7ee5;
+        --transparent-emerald-10: #56d19719;
+        --transparent-emerald-20: #56d19733;
+        --transparent-emerald-30: #56d1974c;
+        --transparent-emerald-40: #56d19766;
+        --transparent-emerald-50: #56d1977f;
+        --transparent-emerald-60: #56d19799;
+        --transparent-emerald-70: #56d197b2;
+        --transparent-emerald-80: #56d197cc;
+        --transparent-emerald-90: #56d197e5;
+        --transparent-teal-10: #53d2be19;
+        --transparent-teal-20: #53d2be33;
+        --transparent-teal-30: #53d2be4c;
+        --transparent-teal-40: #53d2be66;
+        --transparent-teal-50: #53d2be7f;
+        --transparent-teal-60: #53d2be99;
+        --transparent-teal-70: #53d2beb2;
+        --transparent-teal-80: #53d2becc;
+        --transparent-teal-90: #53d2bee5;
+        --transparent-cyan-10: #4ad0ef19;
+        --transparent-cyan-20: #4ad0ef33;
+        --transparent-cyan-30: #4ad0ef4c;
+        --transparent-cyan-40: #4ad0ef66;
+        --transparent-cyan-50: #4ad0ef7f;
+        --transparent-cyan-60: #4ad0ef99;
+        --transparent-cyan-70: #4ad0efb2;
+        --transparent-cyan-80: #4ad0efcc;
+        --transparent-cyan-90: #4ad0efe5;
+        --transparent-sky-10: #4db9fa19;
+        --transparent-sky-20: #4db9fa33;
+        --transparent-sky-30: #4db9fa4c;
+        --transparent-sky-40: #4db9fa66;
+        --transparent-sky-50: #4db9fa7f;
+        --transparent-sky-60: #4db9fa99;
+        --transparent-sky-70: #4db9fab2;
+        --transparent-sky-80: #4db9facc;
+        --transparent-sky-90: #4db9fae5;
+        --transparent-blue-10: #65a0fd19;
+        --transparent-blue-20: #65a0fd33;
+        --transparent-blue-30: #65a0fd4c;
+        --transparent-blue-40: #65a0fd66;
+        --transparent-blue-50: #65a0fd7f;
+        --transparent-blue-60: #65a0fd99;
+        --transparent-blue-70: #65a0fdb2;
+        --transparent-blue-80: #65a0fdcc;
+        --transparent-blue-90: #65a0fde5;
+        --transparent-indigo-10: #7e86fb19;
+        --transparent-indigo-20: #7e86fb33;
+        --transparent-indigo-30: #7e86fb4c;
+        --transparent-indigo-40: #7e86fb66;
+        --transparent-indigo-50: #7e86fb7f;
+        --transparent-indigo-60: #7e86fb99;
+        --transparent-indigo-70: #7e86fbb2;
+        --transparent-indigo-80: #7e86fbcc;
+        --transparent-indigo-90: #7e86fbe5;
+        --transparent-violet-10: #a185fd19;
+        --transparent-violet-20: #a185fd33;
+        --transparent-violet-30: #a185fd4c;
+        --transparent-violet-40: #a185fd66;
+        --transparent-violet-50: #a185fd7f;
+        --transparent-violet-60: #a185fd99;
+        --transparent-violet-70: #a185fdb2;
+        --transparent-violet-80: #a185fdcc;
+        --transparent-violet-90: #a185fde5;
+        --transparent-purple-10: #b87efe19;
+        --transparent-purple-20: #b87efe33;
+        --transparent-purple-30: #b87efe4c;
+        --transparent-purple-40: #b87efe66;
+        --transparent-purple-50: #b87efe7f;
+        --transparent-purple-60: #b87efe99;
+        --transparent-purple-70: #b87efeb2;
+        --transparent-purple-80: #b87efecc;
+        --transparent-purple-90: #b87efee5;
+        --transparent-fuchsia-10: #dd72fa19;
+        --transparent-fuchsia-20: #dd72fa33;
+        --transparent-fuchsia-30: #dd72fa4c;
+        --transparent-fuchsia-40: #dd72fa66;
+        --transparent-fuchsia-50: #dd72fa7f;
+        --transparent-fuchsia-60: #dd72fa99;
+        --transparent-fuchsia-70: #dd72fab2;
+        --transparent-fuchsia-80: #dd72facc;
+        --transparent-fuchsia-90: #dd72fae5;
+        --transparent-pink-10: #ea6eb319;
+        --transparent-pink-20: #ea6eb333;
+        --transparent-pink-30: #ea6eb34c;
+        --transparent-pink-40: #ea6eb366;
+        --transparent-pink-50: #ea6eb37f;
+        --transparent-pink-60: #ea6eb399;
+        --transparent-pink-70: #ea6eb3b2;
+        --transparent-pink-80: #ea6eb3cc;
+        --transparent-pink-90: #ea6eb3e5;
+        --transparent-rose-10: #f16e8119;
+        --transparent-rose-20: #f16e8133;
+        --transparent-rose-30: #f16e814c;
+        --transparent-rose-40: #f16e8166;
+        --transparent-rose-50: #f16e817f;
+        --transparent-rose-60: #f16e8199;
+        --transparent-rose-70: #f16e81b2;
+        --transparent-rose-80: #f16e81cc;
+        --transparent-rose-90: #f16e81e5;
+        --rose-100: #fbe5e6;
+        --rose-200: #f7ced3;
+        --rose-300: #f49ea9;
+        --rose-400: #f16e81;
+        --rose-500: #eb3e5b;
+        --rose-600: #d91a45;
+        --rose-700: #b6133a;
+        --rose-800: #971838;
+        --rose-900: #7f1b37;
+        --rose-950: #460a19;
+        --zinc-1000: #09090b;
+
+        /* Light theme */
+        --color-text-default: var(--zinc-950);
+        --color-text-subtle: var(--zinc-600);
+        --color-text-muted: var(--zinc-500);
+        --color-text-hint: var(--transparent-dark-30);
+        --color-text-inverted-default: var(--zinc-00);
+        --color-text-inverted-subtle: var(--transparent-light-70);
+        --color-text-inverted-muted: var(--transparent-light-50);
+        --color-text-inverted-hint: var(--transparent-light-30);
+        --color-text-white-default: var(--zinc-00);
+        --color-text-white-subtle: var(--transparent-light-70);
+        --color-text-white-muted: var(--transparent-light-50);
+        --color-text-white-hint: var(--transparent-light-30);
+        --color-text-dark-default: var(--zinc-950);
+        --color-text-dark-subtle: var(--zinc-600);
+        --color-text-dark-muted: var(--zinc-500);
+        --color-text-dark-hint: var(--transparent-dark-35);
+        --color-text-destructive: var(--red-600);
+        --color-text-success: var(--green-600);
+        --color-text-warning: var(--orange-600);
+        --color-text-informative: var(--blue-600);
+        --color-bg-default: var(--zinc-00);
+        --color-bg-subtle: var(--zinc-50);
+        --color-bg-muted: var(--zinc-100);
+        --color-bg-inverted: var(--zinc-900);
+        --color-bg-card: var(--zinc-00);
+        --color-bg-card-subtle: var(--zinc-50);
+        --color-bg-card-inverted: var(--zinc-800);
+        --color-bg-sidebar: var(--zinc-00);
+        --color-bg-sidebar-subtle: var(--zinc-50);
+        --color-bg-input: var(--zinc-00);
+        --color-bg-input-soft: var(--transparent-dark-6);
+        --color-bg-input-disabled: var(--transparent-dark-6);
+        --color-bg-overlay: var(--transparent-dark-60);
+        --color-bg-state-primary: var(--blue-500);
+        --color-bg-state-primary-hover: var(--blue-400);
+        --color-bg-state-primary-press: var(--blue-500);
+        --color-bg-state-primary-loading: var(--blue-300);
+        --color-bg-state-secondary: var(--zinc-00);
+        --color-bg-state-secondary-hover: var(--zinc-50);
+        --color-bg-state-secondary-press: var(--zinc-100);
+        --color-bg-state-secondary-loading: var(--zinc-00);
+        --color-bg-state-soft: var(--transparent-dark-6);
+        --color-bg-state-soft-hover: var(--transparent-dark-8);
+        --color-bg-state-soft-press: var(--transparent-dark-10);
+        --color-bg-state-soft-loading: var(--transparent-dark-6);
+        --color-bg-state-ghost: var(--transparent-dark-00);
+        --color-bg-state-ghost-hover: var(--transparent-dark-6);
+        --color-bg-state-ghost-press: var(--transparent-dark-8);
+        --color-bg-state-ghost-loading: var(--transparent-dark-6);
+        --color-bg-state-ghost-inverted: var(--transparent-light-00);
+        --color-bg-state-ghost-hover-inverted: var(--transparent-light-8);
+        --color-bg-state-ghost-press-inverted: var(--transparent-light-15);
+        --color-bg-state-ghost-loading-inverted: var(--transparent-light-8);
+        --color-bg-state-destructive: var(--red-500);
+        --color-bg-state-destructive-hover: var(--red-400);
+        --color-bg-state-destructive-press: var(--red-500);
+        --color-bg-state-destructive-loading: var(--red-300);
+        --color-bg-state-brand: var(--blue-500);
+        --color-bg-state-brand-hover: var(--blue-400);
+        --color-bg-state-brand-press: var(--blue-500);
+        --color-bg-state-brand-loading: var(--blue-300);
+        --color-bg-state-gray: var(--zinc-950);
+        --color-bg-state-disabled: var(--transparent-dark-8);
+        --color-icon-default: var(--zinc-950);
+        --color-border-default: var(--transparent-dark-10);
+        --color-border-darker: var(--transparent-dark-15);
+        --color-border-strong: var(--transparent-dark-25);
+        --color-border-inverted: var(--transparent-light-20);
+        --color-border-accent: var(--zinc-950);
+        --color-border-accent-inverted: var(--zinc-00);
+        --color-border-destructive: var(--red-500);
+        --color-border-informative: var(--blue-500);
+        --color-border-success: var(--green-500);
+        --color-border-warning: var(--orange-500);
+        --color-border-highlight: var(--transparent-blue-40);
+        --color-border-highlight-destructive: var(--transparent-red-40);
+        --color-border-input-highlight: var(--transparent-dark-40);
+        --color-border-white: var(--transparent-light-20);
+        --color-border-red: var(--transparent-red-20);
+        --color-border-orange: var(--transparent-orange-20);
+        --color-border-amber: var(--transparent-amber-20);
+        --color-border-yellow: var(--transparent-yellow-20);
+        --color-border-lime: var(--transparent-lime-20);
+        --color-border-green: var(--transparent-green-20);
+        --color-border-emerald: var(--transparent-emerald-20);
+        --color-border-teal: var(--transparent-teal-20);
+        --color-border-cyan: var(--transparent-cyan-20);
+        --color-border-sky: var(--transparent-sky-20);
+        --color-border-blue: var(--transparent-blue-20);
+        --color-border-indigo: var(--transparent-indigo-20);
+        --color-border-violet: var(--transparent-violet-20);
+        --color-border-purple: var(--transparent-purple-20);
+        --color-border-fuchsia: var(--transparent-fuchsia-20);
+        --color-border-pink: var(--transparent-pink-20);
+        --color-border-rose: var(--transparent-rose-20);
+        --color-icon-default-subtle: var(--zinc-600);
+        --color-icon-default-muted: var(--zinc-500);
+        --color-icon-default-disabled: var(--transparent-dark-25);
+        --color-icon-inverted-default: var(--zinc-00);
+        --color-icon-inverted-subtle: var(--transparent-light-65);
+        --color-icon-inverted-muted: var(--transparent-light-50);
+        --color-icon-inverted-disabled: var(--transparent-light-35);
+        --color-icon-white-default: var(--zinc-00);
+        --color-icon-white-subtle: var(--transparent-light-65);
+        --color-icon-white-muted: var(--transparent-light-50);
+        --color-icon-white-disabled: var(--transparent-light-35);
+        --color-icon-black-default: var(--zinc-950);
+        --color-icon-black-subtle: var(--zinc-600);
+        --color-icon-black-muted: var(--zinc-500);
+        --color-icon-black-disabled: var(--transparent-dark-35);
+        --color-icon-destructive: var(--red-500);
+        --color-icon-informative: var(--blue-500);
+        --color-icon-success: var(--green-500);
+        --color-icon-warning: var(--orange-500);
+        --color-bg-checkbox-default: var(--zinc-00);
+        --color-bg-switch-default: var(--zinc-200);
+        --color-bg-badge-default: var(--zinc-00);
+        --color-bg-badge-inverted: var(--zinc-950);
+        --color-bg-badge-gray: var(--transparent-dark-6);
+        --color-bg-badge-white: var(--transparent-light-10);
+        --color-bg-badge-red: var(--transparent-red-10);
+        --color-bg-badge-orange: var(--transparent-orange-10);
+        --color-bg-badge-amber: var(--transparent-amber-10);
+        --color-bg-badge-yellow: var(--transparent-yellow-10);
+        --color-bg-badge-lime: var(--transparent-lime-10);
+        --color-bg-badge-green: var(--transparent-green-10);
+        --color-bg-badge-emerald: var(--transparent-emerald-10);
+        --color-bg-badge-teal: var(--transparent-teal-10);
+        --color-bg-badge-cyan: var(--transparent-cyan-10);
+        --color-bg-badge-sky: var(--transparent-sky-10);
+        --color-bg-badge-blue: var(--transparent-blue-10);
+        --color-bg-badge-indigo: var(--transparent-indigo-10);
+        --color-bg-badge-violet: var(--transparent-violet-10);
+        --color-bg-badge-purple: var(--transparent-purple-10);
+        --color-bg-badge-fuchsia: var(--transparent-fuchsia-10);
+        --color-bg-badge-pink: var(--transparent-pink-10);
+        --color-bg-badge-rose: var(--transparent-rose-10);
+        --color-bg-basic-gray-subtle: var(--zinc-100);
+        --color-bg-basic-gray-subtle2: var(--zinc-300);
+        --color-bg-basic-gray-accent: var(--zinc-500);
+        --color-bg-basic-gray-strong: var(--zinc-700);
+        --color-bg-basic-gray-contrast: var(--zinc-900);
+        --color-bg-basic-red-subtle: var(--red-100);
+        --color-bg-basic-red-accent: var(--red-500);
+        --color-bg-basic-red-strong: var(--red-700);
+        --color-bg-basic-red-contrast: var(--red-900);
+        --color-bg-basic-orange-subtle: var(--orange-100);
+        --color-bg-basic-orange-accent: var(--orange-500);
+        --color-bg-basic-orange-strong: var(--orange-700);
+        --color-bg-basic-orange-contrast: var(--orange-900);
+        --color-bg-basic-amber-subtle: var(--amber-100);
+        --color-bg-basic-amber-accent: var(--amber-500);
+        --color-bg-basic-amber-strong: var(--amber-700);
+        --color-bg-basic-amber-contrast: var(--amber-900);
+        --color-bg-basic-yellow-subtle: var(--yellow-100);
+        --color-bg-basic-yellow-accent: var(--yellow-500);
+        --color-bg-basic-yellow-strong: var(--yellow-700);
+        --color-bg-basic-yellow-contrast: var(--yellow-900);
+        --color-bg-basic-lime-subtle: var(--lime-100);
+        --color-bg-basic-lime-accent: var(--lime-500);
+        --color-bg-basic-lime-strong: var(--lime-700);
+        --color-bg-basic-lime-contrast: var(--lime-900);
+        --color-bg-basic-green-subtle: var(--green-100);
+        --color-bg-basic-green-accent: var(--green-500);
+        --color-bg-basic-green-strong: var(--green-700);
+        --color-bg-basic-green-contrast: var(--green-900);
+        --color-bg-basic-emerald-subtle: var(--emerald-100);
+        --color-bg-basic-emerald-accent: var(--emerald-500);
+        --color-bg-basic-emerald-strong: var(--emerald-700);
+        --color-bg-basic-emerlad-contrast: var(--emerald-900);
+        --color-bg-basic-teal-subtle: var(--teal-100);
+        --color-bg-basic-teal-accent: var(--teal-500);
+        --color-bg-basic-teal-strong: var(--teal-700);
+        --color-bg-basic-teal-contrast: var(--teal-900);
+        --color-bg-basic-cyan-subtle: var(--cyan-100);
+        --color-bg-basic-cyan-accent: var(--cyan-500);
+        --color-bg-basic-cyan-strong: var(--cyan-700);
+        --color-bg-basic-cyan-contrast: var(--cyan-900);
+        --color-bg-basic-sky-subtle: var(--sky-100);
+        --color-bg-basic-sky-accent: var(--sky-500);
+        --color-bg-basic-sky-strong: var(--sky-700);
+        --color-bg-basic-sky-contrast: var(--sky-900);
+        --color-bg-basic-blue-subtle: var(--blue-100);
+        --color-bg-basic-blue-accent: var(--blue-500);
+        --color-bg-basic-blue-strong: var(--blue-700);
+        --color-bg-basic-blue-contrast: var(--blue-900);
+        --color-bg-basic-indigo-subtle: var(--indigo-100);
+        --color-bg-basic-indigo-accent: var(--indigo-500);
+        --color-bg-basic-indigo-strong: var(--indigo-700);
+        --color-bg-basic-indigo-contrast: var(--indigo-900);
+        --color-bg-basic-violet-subtle: var(--violet-100);
+        --color-bg-basic-violet-accent: var(--violet-500);
+        --color-bg-basic-violet-strong: var(--violet-700);
+        --color-bg-basic-violet-contrast: var(--violet-900);
+        --color-bg-basic-purple-subtle: var(--purple-100);
+        --color-bg-basic-purple-accent: var(--purple-500);
+        --color-bg-basic-purple-strong: var(--purple-700);
+        --color-bg-basic-purple-contrast: var(--purple-900);
+        --color-bg-basic-fuchsia-subtle: var(--fuchsia-100);
+        --color-bg-basic-fuchsia-accent: var(--fuchsia-500);
+        --color-bg-basic-fuchsia-strong: var(--fuchsia-700);
+        --color-bg-basic-fuchsia-contrast: var(--fuchsia-900);
+        --color-bg-basic-pink-subtle: var(--pink-100);
+        --color-bg-basic-pink-accent: var(--pink-500);
+        --color-bg-basic-pink-strong: var(--pink-700);
+        --color-bg-basic-pink-contrast: var(--pink-900);
+        --color-bg-basic-rose-subtle: var(--rose-100);
+        --color-bg-basic-rose-accent: var(--rose-500);
+        --color-bg-basic-rose-strong: var(--rose-700);
+        --color-bg-basic-rose-contrast: var(--rose-900);
+        --color-bg-basic-gray-alpha-2: var(--transparent-dark-2);
+        --color-bg-basic-gray-alpha-4: var(--transparent-dark-4);
+        --color-bg-basic-gray-alpha-10: var(--transparent-dark-10);
+        --color-bg-basic-gray-alpha-15: var(--transparent-dark-15);
+        --color-bg-switch-default-hover: var(--zinc-300);
+        --color-bg-switch-disabled: var(--zinc-100);
+        --color-bg-switch-default2: var(--zinc-950);
+        --color-bg-switch-active: var(--green-500);
+        --color-bg-switch-active-hover: var(--green-600);
+        --color-bg-switch-active-disabled: var(--green-200);
+        --color-bg-switch-handle: var(--zinc-00);
+        --color-bg-switch-handle-disabled: var(--zinc-50);
+        --color-bg-checkbox-active: var(--blue-500);
+        --color-bg-checkbox-active-hover: var(--blue-400);
+        --color-bg-checkbox-disabled: var(--transparent-dark-6);
+
+        --max-w-9xl: 90rem;
+
+        --breakpoint-xs: 480px;
+        --breakpoint-base: 920px;
+        --shadow-sm: 0 12px 12px -6px rgba(0, 0, 0, 0.04);
+        --shadow-light: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-xlight: 0 -1px 0 0 rgba(0, 0, 0, 0.08);
+        --radius-2xs: 2px;
+        --text-2xs: 10px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          /* Dark theme */
+          --color-text-default: var(--zinc-00);
+          --color-text-subtle: var(--transparent-light-70);
+          --color-text-muted: var(--transparent-light-50);
+          --color-text-hint: var(--transparent-light-30);
+          --color-text-inverted-default: var(--zinc-950);
+          --color-text-inverted-subtle: var(--zinc-600);
+          --color-text-inverted-muted: var(--zinc-500);
+          --color-text-inverted-hint: var(--transparent-dark-35);
+          --color-text-white-default: var(--zinc-00);
+          --color-text-white-subtle: var(--transparent-light-70);
+          --color-text-white-muted: var(--transparent-light-50);
+          --color-text-white-hint: var(--transparent-light-30);
+          --color-text-dark-default: var(--zinc-950);
+          --color-text-dark-subtle: var(--zinc-600);
+          --color-text-dark-muted: var(--zinc-500);
+          --color-text-dark-hint: var(--transparent-dark-35);
+          --color-text-destructive: var(--red-400);
+          --color-text-success: var(--green-400);
+          --color-text-warning: var(--orange-400);
+          --color-text-informative: var(--blue-400);
+          --color-bg-default: var(--zinc-900);
+          --color-bg-subtle: var(--zinc-950);
+          --color-bg-muted: var(--zinc-1000);
+          --color-bg-inverted: var(--zinc-00);
+          --color-bg-card: var(--zinc-800);
+          --color-bg-card-subtle: var(--zinc-700);
+          --color-bg-card-inverted: var(--zinc-00);
+          --color-bg-sidebar: var(--zinc-900);
+          --color-bg-sidebar-subtle: var(--zinc-900);
+          --color-bg-input: var(--transparent-light-6);
+          --color-bg-input-soft: var(--transparent-light-8);
+          --color-bg-input-disabled: var(--transparent-light-15);
+          --color-bg-overlay: var(--transparent-dark-65);
+          --color-bg-state-primary: var(--blue-600);
+          --color-bg-state-primary-hover: var(--blue-500);
+          --color-bg-state-primary-press: var(--blue-600);
+          --color-bg-state-primary-loading: var(--blue-300);
+          --color-bg-state-secondary: var(--transparent-light-4);
+          --color-bg-state-secondary-hover: var(--transparent-light-8);
+          --color-bg-state-secondary-press: var(--transparent-light-10);
+          --color-bg-state-secondary-loading: var(--transparent-light-4);
+          --color-bg-state-soft: var(--transparent-light-8);
+          --color-bg-state-soft-hover: var(--transparent-light-10);
+          --color-bg-state-soft-press: var(--transparent-light-15);
+          --color-bg-state-soft-loading: var(--transparent-light-8);
+          --color-bg-state-ghost: var(--transparent-light-00);
+          --color-bg-state-ghost-hover: var(--transparent-light-8);
+          --color-bg-state-ghost-press: var(--transparent-light-15);
+          --color-bg-state-ghost-loading: var(--transparent-light-8);
+          --color-bg-state-ghost-inverted: var(--transparent-dark-00);
+          --color-bg-state-ghost-hover-inverted: var(--transparent-dark-4);
+          --color-bg-state-ghost-press-inverted: var(--transparent-dark-8);
+          --color-bg-state-ghost-loading-inverted: var(--transparent-dark-4);
+          --color-bg-state-destructive: var(--red-500);
+          --color-bg-state-destructive-hover: var(--red-400);
+          --color-bg-state-destructive-press: var(--red-500);
+          --color-bg-state-destructive-loading: var(--red-300);
+          --color-bg-state-brand: var(--blue-500);
+          --color-bg-state-brand-hover: var(--blue-400);
+          --color-bg-state-brand-press: var(--blue-500);
+          --color-bg-state-brand-loading: var(--blue-300);
+          --color-bg-state-gray: var(--zinc-00);
+          --color-bg-state-disabled: var(--transparent-light-8);
+          --color-icon-default: var(--zinc-00);
+          --color-border-default: var(--transparent-light-10);
+          --color-border-darker: var(--transparent-light-15);
+          --color-border-strong: var(--transparent-light-25);
+          --color-border-inverted: var(--transparent-dark-10);
+          --color-border-accent: var(--zinc-00);
+          --color-border-accent-inverted: var(--zinc-950);
+          --color-border-destructive: var(--red-400);
+          --color-border-informative: var(--blue-400);
+          --color-border-success: var(--green-400);
+          --color-border-warning: var(--orange-400);
+          --color-border-highlight: var(--transparent-blue-40);
+          --color-border-highlight-destructive: var(--transparent-red-40);
+          --color-border-input-highlight: var(--transparent-light-45);
+          --color-border-white: var(--transparent-light-20);
+          --color-border-red: var(--transparent-red-20);
+          --color-border-orange: var(--transparent-orange-20);
+          --color-border-amber: var(--transparent-amber-20);
+          --color-border-yellow: var(--transparent-yellow-20);
+          --color-border-lime: var(--transparent-lime-20);
+          --color-border-green: var(--transparent-green-20);
+          --color-border-emerald: var(--transparent-emerald-20);
+          --color-border-teal: var(--transparent-teal-20);
+          --color-border-cyan: var(--transparent-cyan-20);
+          --color-border-sky: var(--transparent-sky-20);
+          --color-border-blue: var(--transparent-blue-20);
+          --color-border-indigo: var(--transparent-indigo-20);
+          --color-border-violet: var(--transparent-violet-20);
+          --color-border-purple: var(--transparent-purple-20);
+          --color-border-fuchsia: var(--transparent-fuchsia-20);
+          --color-border-pink: var(--transparent-pink-20);
+          --color-border-rose: var(--transparent-rose-20);
+          --color-icon-default-subtle: var(--transparent-light-70);
+          --color-icon-default-muted: var(--transparent-light-50);
+          --color-icon-default-disabled: var(--transparent-light-25);
+          --color-icon-inverted-default: var(--zinc-950);
+          --color-icon-inverted-subtle: var(--zinc-600);
+          --color-icon-inverted-muted: var(--zinc-400);
+          --color-icon-inverted-disabled: var(--transparent-dark-35);
+          --color-icon-white-default: var(--zinc-00);
+          --color-icon-white-subtle: var(--transparent-light-70);
+          --color-icon-white-muted: var(--transparent-light-50);
+          --color-icon-white-disabled: var(--transparent-light-40);
+          --color-icon-black-default: var(--zinc-950);
+          --color-icon-black-subtle: var(--zinc-600);
+          --color-icon-black-muted: var(--zinc-500);
+          --color-icon-black-disabled: var(--transparent-dark-35);
+          --color-icon-destructive: var(--red-300);
+          --color-icon-informative: var(--blue-300);
+          --color-icon-success: var(--green-300);
+          --color-icon-warning: var(--orange-300);
+          --color-bg-checkbox-default: var(--transparent-light-6);
+          --color-bg-switch-default: var(--zinc-600);
+          --color-bg-badge-default: var(--transparent-light-10);
+          --color-bg-badge-inverted: var(--zinc-00);
+          --color-bg-badge-gray: var(--transparent-light-10);
+          --color-bg-badge-white: var(--transparent-light-10);
+          --color-bg-badge-red: var(--transparent-red-10);
+          --color-bg-badge-orange: var(--transparent-orange-10);
+          --color-bg-badge-amber: var(--transparent-amber-10);
+          --color-bg-badge-yellow: var(--transparent-yellow-10);
+          --color-bg-badge-lime: var(--transparent-lime-10);
+          --color-bg-badge-green: var(--transparent-green-10);
+          --color-bg-badge-emerald: var(--transparent-emerald-10);
+          --color-bg-badge-teal: var(--transparent-teal-10);
+          --color-bg-badge-cyan: var(--transparent-cyan-10);
+          --color-bg-badge-sky: var(--transparent-sky-10);
+          --color-bg-badge-blue: var(--transparent-blue-10);
+          --color-bg-badge-indigo: var(--transparent-indigo-10);
+          --color-bg-badge-violet: var(--transparent-violet-10);
+          --color-bg-badge-purple: var(--transparent-purple-10);
+          --color-bg-badge-fuchsia: var(--transparent-fuchsia-10);
+          --color-bg-badge-pink: var(--transparent-pink-10);
+          --color-bg-badge-rose: var(--transparent-rose-10);
+          --color-bg-basic-gray-subtle: var(--zinc-900);
+          --color-bg-basic-gray-subtle2: var(--zinc-700);
+          --color-bg-basic-gray-accent: var(--zinc-500);
+          --color-bg-basic-gray-strong: var(--zinc-400);
+          --color-bg-basic-gray-contrast: var(--zinc-100);
+          --color-bg-basic-red-subtle: var(--red-900);
+          --color-bg-basic-red-accent: var(--red-500);
+          --color-bg-basic-red-strong: var(--red-400);
+          --color-bg-basic-red-contrast: var(--red-100);
+          --color-bg-basic-orange-subtle: var(--orange-900);
+          --color-bg-basic-orange-accent: var(--orange-500);
+          --color-bg-basic-orange-strong: var(--orange-400);
+          --color-bg-basic-orange-contrast: var(--orange-100);
+          --color-bg-basic-amber-subtle: var(--amber-900);
+          --color-bg-basic-amber-accent: var(--amber-500);
+          --color-bg-basic-amber-strong: var(--amber-400);
+          --color-bg-basic-amber-contrast: var(--amber-100);
+          --color-bg-basic-yellow-subtle: var(--yellow-900);
+          --color-bg-basic-yellow-accent: var(--yellow-500);
+          --color-bg-basic-yellow-strong: var(--yellow-400);
+          --color-bg-basic-yellow-contrast: var(--yellow-100);
+          --color-bg-basic-lime-subtle: var(--lime-900);
+          --color-bg-basic-lime-accent: var(--lime-500);
+          --color-bg-basic-lime-strong: var(--lime-400);
+          --color-bg-basic-lime-contrast: var(--lime-100);
+          --color-bg-basic-green-subtle: var(--green-900);
+          --color-bg-basic-green-accent: var(--green-500);
+          --color-bg-basic-green-strong: var(--green-400);
+          --color-bg-basic-green-contrast: var(--green-100);
+          --color-bg-basic-emerald-subtle: var(--emerald-900);
+          --color-bg-basic-emerald-accent: var(--emerald-500);
+          --color-bg-basic-emerald-strong: var(--emerald-400);
+          --color-bg-basic-emerlad-contrast: var(--emerald-100);
+          --color-bg-basic-teal-subtle: var(--teal-900);
+          --color-bg-basic-teal-accent: var(--teal-500);
+          --color-bg-basic-teal-strong: var(--teal-400);
+          --color-bg-basic-teal-contrast: var(--teal-100);
+          --color-bg-basic-cyan-subtle: var(--cyan-900);
+          --color-bg-basic-cyan-accent: var(--cyan-500);
+          --color-bg-basic-cyan-strong: var(--cyan-400);
+          --color-bg-basic-cyan-contrast: var(--cyan-100);
+          --color-bg-basic-sky-subtle: var(--sky-900);
+          --color-bg-basic-sky-accent: var(--sky-500);
+          --color-bg-basic-sky-strong: var(--sky-400);
+          --color-bg-basic-sky-contrast: var(--sky-100);
+          --color-bg-basic-blue-subtle: var(--blue-900);
+          --color-bg-basic-blue-accent: var(--blue-500);
+          --color-bg-basic-blue-strong: var(--blue-400);
+          --color-bg-basic-blue-contrast: var(--blue-100);
+          --color-bg-basic-indigo-subtle: var(--indigo-900);
+          --color-bg-basic-indigo-accent: var(--indigo-500);
+          --color-bg-basic-indigo-strong: var(--indigo-400);
+          --color-bg-basic-indigo-contrast: var(--indigo-100);
+          --color-bg-basic-violet-subtle: var(--violet-900);
+          --color-bg-basic-violet-accent: var(--violet-500);
+          --color-bg-basic-violet-strong: var(--violet-400);
+          --color-bg-basic-violet-contrast: var(--violet-100);
+          --color-bg-basic-purple-subtle: var(--purple-900);
+          --color-bg-basic-purple-accent: var(--purple-500);
+          --color-bg-basic-purple-strong: var(--purple-400);
+          --color-bg-basic-purple-contrast: var(--purple-100);
+          --color-bg-basic-fuchsia-subtle: var(--fuchsia-900);
+          --color-bg-basic-fuchsia-accent: var(--fuchsia-500);
+          --color-bg-basic-fuchsia-strong: var(--fuchsia-400);
+          --color-bg-basic-fuchsia-contrast: var(--fuchsia-100);
+          --color-bg-basic-pink-subtle: var(--pink-900);
+          --color-bg-basic-pink-accent: var(--pink-500);
+          --color-bg-basic-pink-strong: var(--pink-400);
+          --color-bg-basic-pink-contrast: var(--pink-100);
+          --color-bg-basic-rose-subtle: var(--rose-900);
+          --color-bg-basic-rose-accent: var(--rose-500);
+          --color-bg-basic-rose-strong: var(--rose-400);
+          --color-bg-basic-rose-contrast: var(--rose-100);
+          --color-bg-basic-gray-alpha-2: var(--transparent-light-4);
+          --color-bg-basic-gray-alpha-4: var(--transparent-light-8);
+          --color-bg-basic-gray-alpha-10: var(--transparent-light-15);
+          --color-bg-basic-gray-alpha-15: var(--transparent-light-20);
+          --color-bg-switch-default-hover: var(--zinc-500);
+          --color-bg-switch-disabled: var(--zinc-300);
+          --color-bg-switch-default2: var(--zinc-00);
+          --color-bg-switch-active: var(--green-500);
+          --color-bg-switch-active-hover: var(--green-400);
+          --color-bg-switch-active-disabled: var(--green-200);
+          --color-bg-switch-handle: var(--zinc-00);
+          --color-bg-switch-handle-disabled: var(--zinc-50);
+          --color-bg-checkbox-active: var(--blue-500);
+          --color-bg-checkbox-active-hover: var(--blue-400);
+          --color-bg-checkbox-disabled: var(--transparent-light-6);
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* AnimateIn — vanilla replacement for the React component */
+      [data-animate] {
+        opacity: 0;
+        transition:
+          opacity 650ms cubic-bezier(0.4, 0, 0.2, 1),
+          transform 650ms cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity, transform;
+      }
+      [data-animate="bottom"] {
+        transform: translateY(28px);
+      }
+      [data-animate="left"] {
+        transform: translateX(-28px);
+      }
+      [data-animate="right"] {
+        transform: translateX(28px);
+      }
+      [data-animate="fade"] {
+        transform: none;
+      }
+      [data-animate].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+
+  <body class="flex min-h-full flex-col">
+    <div class="min-h-screen bg-zinc-50">
+      <!-- ===================== NAVBAR ===================== -->
+      <nav class="sticky top-0 z-50 px-4 py-3">
+        <div
+          class="max-w-9xl mx-auto flex items-center justify-between rounded-2xl border border-zinc-200/60 bg-white/90 px-6 py-3.5 shadow-sm backdrop-blur-md"
+        >
+          <a href="#" class="shrink-0">
+            <img src="assets/Logomark.svg" width="65" height="27" alt="Axis" />
+          </a>
+
+          <div class="hidden items-center gap-0.5 md:flex">
+            <a href="#why-it-matters" class="rounded-full px-3.5 py-1.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-100 hover:text-[#111115]">Why It Matters</a>
+            <a href="#features" class="rounded-full px-3.5 py-1.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-100 hover:text-[#111115]">Features</a>
+            <a href="#why-choose-us" class="rounded-full px-3.5 py-1.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-100 hover:text-[#111115]">Why Choose Us</a>
+            <a href="#pricing" class="rounded-full px-3.5 py-1.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-100 hover:text-[#111115]">Pricing</a>
+          </div>
+
+          <div class="hidden items-center gap-2.5 md:flex">
+            <a href="https://app.axisbydigenty.com/auth/staff?step=login" class="rounded-full bg-zinc-100 px-4 py-2 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]">Log In</a>
+            <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="rounded-full bg-[#437dfc] px-4 py-2 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-600 hover:shadow-md">Get Started</a>
+          </div>
+
+          <button
+            id="menu-btn"
+            class="rounded-lg p-2 text-[#111115] transition-colors duration-200 hover:bg-zinc-100 md:hidden"
+            aria-label="Toggle menu"
+          >
+            <i data-lucide="menu" id="icon-menu" class="size-[20px]"></i>
+            <i data-lucide="x" id="icon-x" class="hidden size-[20px]"></i>
+          </button>
+        </div>
+
+        <div
+          id="mobile-menu"
+          class="mx-auto mt-1.5 hidden max-w-7xl flex-col gap-1 rounded-2xl border border-zinc-200/60 bg-white/95 px-4 py-4 shadow-lg backdrop-blur-md md:hidden"
+        >
+          <a href="#why-it-matters" data-mobile-link class="rounded-xl px-4 py-2.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-50 hover:text-[#111115]">Why It Matters</a>
+          <a href="#features" data-mobile-link class="rounded-xl px-4 py-2.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-50 hover:text-[#111115]">Features</a>
+          <a href="#why-choose-us" data-mobile-link class="rounded-xl px-4 py-2.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-50 hover:text-[#111115]">Why Choose Us</a>
+          <a href="#pricing" data-mobile-link class="rounded-xl px-4 py-2.5 text-sm font-medium text-[#4e4e55] transition-colors duration-200 hover:bg-zinc-50 hover:text-[#111115]">Pricing</a>
+          <div class="mt-2 flex flex-col gap-2 border-t border-zinc-100 pt-3">
+            <a href="https://app.axisbydigenty.com/auth/staff?step=login" data-mobile-link class="rounded-full bg-zinc-100 px-4 py-2.5 text-center text-sm font-medium text-[#4e4e55] transition-colors hover:bg-zinc-200">Log In</a>
+            <a href="https://app.axisbydigenty.com/auth/staff?step=signup" data-mobile-link class="rounded-full bg-[#437dfc] px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-blue-600">Get Started</a>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <!-- ===================== HERO ===================== -->
+        <section class="px-4 pt-2 pb-6">
+          <div class="max-w-9xl mx-auto overflow-hidden rounded-2xl bg-white shadow-[0px_1px_4px_0px_rgba(12,12,13,0.1)]">
+            <div class="flex flex-col items-stretch lg:flex-row">
+              <!-- Left -->
+              <div class="flex flex-1 flex-col justify-center gap-8 px-8 py-12 lg:px-12 lg:py-20 lg:pr-6">
+                <div data-animate="bottom">
+                  <div class="flex flex-col gap-5">
+                    <h1 class="text-4xl leading-tight font-bold tracking-tight text-[#111115] sm:text-5xl lg:text-[3.5rem]">
+                      Manage your school<br class="hidden sm:block" /> with ease, ditch<br class="hidden sm:block" /> the chaos
+                    </h1>
+                    <p class="max-w-[460px] text-base leading-relaxed text-[#4e4e55]">
+                      Manage results, CBT exams, fees, attendance, and parent communication in one simple system built for modern schools.
+                    </p>
+                  </div>
+                </div>
+
+                <div data-animate="bottom" style="transition-delay: 150ms">
+                  <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                    <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="flex w-full items-center justify-center gap-2 rounded-full bg-[#437dfc] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue-600 hover:shadow-md active:scale-[0.98] sm:w-auto">Get Started</a>
+                    <a href="https://app.axisbydigenty.com/auth/staff?step=login" class="w-full rounded-full border border-zinc-200 px-5 py-2.5 text-center text-sm font-medium text-[#111115] transition-all duration-200 hover:border-zinc-300 hover:bg-zinc-50 sm:w-auto">Login</a>
+                  </div>
+                </div>
+
+                <div data-animate="bottom" style="transition-delay: 280ms">
+                  <div class="grid grid-cols-1 gap-3 overflow-hidden md:grid-cols-3">
+                    <div class="flex flex-col gap-1 rounded-xl px-4 py-4 bg-[#FEF3C7]">
+                      <span class="text-md font-semibold text-[#111115] sm:text-2xl">1,000+</span>
+                      <span class="text-xs leading-snug text-[#6f6f77] sm:text-sm">Students Enrolled</span>
+                    </div>
+                    <div class="flex flex-col gap-1 rounded-xl px-4 py-4 bg-[#D9F99D]">
+                      <span class="text-md font-semibold text-[#111115] sm:text-2xl">200+</span>
+                      <span class="text-xs leading-snug text-[#6f6f77] sm:text-sm">Teachers Onboarded</span>
+                    </div>
+                    <div class="flex flex-col gap-1 rounded-xl px-4 py-4 bg-[#f0faf8]">
+                      <span class="text-md font-semibold text-[#111115] sm:text-2xl">50+</span>
+                      <span class="text-xs leading-snug text-[#6f6f77] sm:text-sm">Parents Onboarded</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right -->
+              <div
+                data-animate="right"
+                style="transition-delay: 200ms"
+                class="flex flex-1 items-end justify-center pt-8 pb-0 pl-6 lg:w-[55%] lg:flex-none lg:items-end lg:justify-end lg:pt-10 lg:pr-0 lg:pl-8"
+              >
+                <div class="relative w-full">
+                  <!-- Mobile: dashboard.png with badge bottom-right -->
+                  <div class="relative block lg:hidden">
+                    <img src="assets/dashboard.png" alt="Axis Dashboard" width="800" height="500" class="w-full rounded-2xl" />
+                    <div class="absolute right-4 bottom-4 z-10 flex flex-col gap-2 rounded-2xl border-2 border-[#facc15] bg-[#0a2e28] px-3.5 py-2 shadow-lg">
+                      <div class="flex items-center gap-0.5">
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                      </div>
+                      <span class="text-xs font-medium text-white">Trusted by schools</span>
+                    </div>
+                  </div>
+
+                  <!-- Desktop: dashboard mockup with badge top-left -->
+                  <div class="hidden lg:block">
+                    <div class="absolute -top-1 -left-5 z-10 flex flex-col gap-2 rounded-2xl border-2 border-[#facc15] bg-[#0a2e28] px-3.5 py-2 shadow-lg">
+                      <div class="flex items-center gap-0.5">
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                        <i data-lucide="star" class="size-[11px] text-yellow-400 fill-[#facc15]"></i>
+                      </div>
+                      <span class="text-xs font-medium text-white">Trusted by schools</span>
+                    </div>
+
+                    <!-- Dashboard mockup -->
+                    <div class="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
+                      <div class="flex items-center justify-between border-b border-zinc-100 bg-zinc-50 px-4 py-2">
+                        <div class="flex items-center gap-1.5">
+                          <img src="assets/Logomark.svg" width="45" height="27" alt="Axis" />
+                        </div>
+                        <span class="text-[11px] font-semibold text-[#111115]">Dashboard</span>
+                        <div class="h-2 w-8 rounded bg-zinc-200"></div>
+                      </div>
+
+                      <div class="flex h-110 lg:h-158">
+                        <!-- Sidebar -->
+                        <div class="flex w-40 shrink-0 flex-col gap-5 overflow-y-auto border-r border-zinc-100 bg-zinc-50 px-2 py-2">
+                          <div class="mb-1">
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] bg-[#437dfc]/10 text-[#437dfc]"><i data-lucide="layout-dashboard" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Dashboard</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="users" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Student &amp; Parent Record</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="book-open" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Classes &amp; Subjects</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="clipboard-list" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">CBT</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="calendar" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Attendance</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="user-plus" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Admission Management</span></div>
+                          </div>
+                          <div class="mb-1">
+                            <p class="px-2 pt-2 pb-0.5 text-[8px] font-semibold tracking-wider text-zinc-400 uppercase">Finance</p>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="receipt" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Invoices</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="wallet" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Fees</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="trending-down" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Expenses</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="package" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Stock</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="credit-card" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Fee Collection</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="bar-chart-2" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Finance Report</span></div>
+                          </div>
+                          <div class="mb-1">
+                            <p class="px-2 pt-2 pb-0.5 text-[8px] font-semibold tracking-wider text-zinc-400 uppercase">Communication &amp; Portal</p>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="message-square" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Communications</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="globe" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Website Customization</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="globe" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Domain</span></div>
+                            <div class="flex items-center gap-1.5 rounded-md px-2 py-[3px] text-zinc-400"><i data-lucide="monitor" class="size-[10px]"></i><span class="text-[9px] leading-tight font-medium">Website Overview</span></div>
+                          </div>
+
+                          <div class="mt-auto px-2 pt-2 pb-1">
+                            <div class="flex items-center justify-between">
+                              <span class="text-[9px] text-[#111115]">Setup Guide</span>
+                              <span class="text-[9px] font-semibold text-zinc-400">50%</span>
+                            </div>
+                            <div class="mt-1 h-1 w-full overflow-hidden rounded-full bg-zinc-200">
+                              <div class="bg-bg-basic-emerald-strong h-full w-1/2 rounded-full"></div>
+                            </div>
+                          </div>
+
+                          <div class="mt-1 flex items-center gap-1.5 px-2 py-1.5 text-zinc-400">
+                            <i data-lucide="log-out" class="size-[10px]"></i><span class="text-[9px]">Sign Out</span>
+                          </div>
+                        </div>
+
+                        <!-- Main content -->
+                        <div class="flex flex-1 flex-col gap-3 overflow-hidden p-4">
+                          <p class="text-xs font-semibold text-[#111115]">Overview</p>
+
+                          <div class="grid grid-cols-3 gap-2">
+                            <div class="rounded-xl border border-zinc-100 bg-white p-2.5 shadow-sm">
+                              <p class="text-[9px] text-zinc-500">Fees Collected</p>
+                              <p class="mt-0.5 text-[11px] font-bold text-[#111115]">₦200,280</p>
+                              <span class="mt-1 inline-block rounded-full px-1.5 py-0.5 text-[9px] font-semibold text-green-700 bg-green-50">+54%</span>
+                            </div>
+                            <div class="rounded-xl border border-zinc-100 bg-white p-2.5 shadow-sm">
+                              <p class="text-[9px] text-zinc-500">Outstanding Fees</p>
+                              <p class="mt-0.5 text-[11px] font-bold text-[#111115]">₦50,000</p>
+                              <span class="mt-1 inline-block rounded-full px-1.5 py-0.5 text-[9px] font-semibold text-[#437dfc] bg-blue-50">+100%</span>
+                            </div>
+                            <div class="rounded-xl border border-zinc-100 bg-white p-2.5 shadow-sm">
+                              <p class="text-[9px] text-zinc-500">Students</p>
+                              <p class="mt-0.5 text-[11px] font-bold text-[#111115]">1,240</p>
+                              <span class="mt-1 inline-block rounded-full px-1.5 py-0.5 text-[9px] font-semibold text-violet-700 bg-violet-50">+12%</span>
+                            </div>
+                          </div>
+
+                          <div class="flex flex-wrap gap-1.5">
+                            <div class="flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-[10px] font-medium text-zinc-600 shadow-sm"><i data-lucide="file-plus" class="size-[10px]"></i>Create Invoice</div>
+                            <div class="flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-[10px] font-medium text-zinc-600 shadow-sm"><i data-lucide="bell" class="size-[10px]"></i>Send Reminders</div>
+                            <div class="flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-[10px] font-medium text-zinc-600 shadow-sm"><i data-lucide="user-plus" class="size-[10px]"></i>Add Student</div>
+                          </div>
+
+                          <div class="flex flex-1 flex-col rounded-xl border border-zinc-100 bg-white p-3">
+                            <div class="mb-2 flex flex-col gap-1.5">
+                              <div class="flex items-center justify-between">
+                                <p class="text-[10px] font-medium text-zinc-500">Class Payment Completion</p>
+                                <div class="flex items-center gap-2.5">
+                                  <span class="flex items-center gap-1 text-[9px] text-zinc-400"><span class="inline-block h-2 w-2 rounded-sm bg-[#437dfc]"></span>Paid</span>
+                                  <span class="flex items-center gap-1 text-[9px] text-zinc-400"><span class="inline-block h-2 w-2 rounded-sm bg-zinc-200"></span>Unpaid</span>
+                                </div>
+                              </div>
+                              <div class="flex w-fit items-center gap-1 rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5">
+                                <span class="text-[9px] text-zinc-600">24/25 Third Term</span>
+                                <i data-lucide="chevron-down" class="size-[9px] text-zinc-400"></i>
+                              </div>
+                            </div>
+                            <div class="relative flex flex-1 items-end gap-1 overflow-hidden pb-1">
+                              <div class="pointer-events-none absolute right-0 left-0 border-b border-zinc-100" style="bottom: 25%"></div>
+                              <div class="pointer-events-none absolute right-0 left-0 border-b border-zinc-100" style="bottom: 50%"></div>
+                              <div class="pointer-events-none absolute right-0 left-0 border-b border-zinc-100" style="bottom: 75%"></div>
+                              <div class="pointer-events-none absolute right-0 left-0 border-b border-zinc-100" style="bottom: 100%"></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 36px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 165px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 16px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 240px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 44px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 135px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 8px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 270px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 28px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 195px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 40px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 150px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 12px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 255px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 32px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 180px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 20px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 225px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 48px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 120px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 9.6px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 264px"></div></div>
+                              <div class="relative z-10 flex flex-1 flex-col gap-0.5"><div class="w-full rounded-t-sm bg-zinc-200" style="height: 24px"></div><div class="w-full rounded-t-sm bg-[#437dfc]" style="height: 210px"></div></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== WHY IT MATTERS ===================== -->
+        <section id="why-it-matters" class="border border-zinc-200/60 px-4 py-12 shadow-sm lg:py-16">
+          <div class="max-w-9xl mx-auto flex flex-col gap-10">
+            <div data-animate="bottom">
+              <div class="flex flex-col gap-3">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-[#E0F2FE] px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                  <i data-lucide="sparkles" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black fill-black"></i>
+                  Why It Matters
+                </span>
+                <h2 class="max-w-lg text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Running a school should not feel hard</h2>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div data-animate="bottom">
+                <div class="group flex h-full flex-col gap-4 rounded-2xl border border-zinc-200/70 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50"><i data-lucide="circle-alert" class="size-[18px] text-rose-500"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <p class="text-base leading-snug font-semibold text-[#111115]">Results are stressful and error-prone</p>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Manual computation leads to mistakes and delays</p>
+                  </div>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 100ms">
+                <div class="group flex h-full flex-col gap-4 rounded-2xl border border-zinc-200/70 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50"><i data-lucide="dollar-sign" class="size-[18px] text-amber-500"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <p class="text-base leading-snug font-semibold text-[#111115]">Fee tracking is manual and messy</p>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Spreadsheets and paper records are hard to maintain</p>
+                  </div>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 200ms">
+                <div class="group flex h-full flex-col gap-4 rounded-2xl border border-zinc-200/70 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50"><i data-lucide="target" class="size-[18px] text-emerald-500"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <p class="text-base leading-snug font-semibold text-[#111115]">Parents lack visibility</p>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Constant calls and visits for basic information</p>
+                  </div>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 300ms">
+                <div class="group flex h-full flex-col gap-4 rounded-2xl border border-zinc-200/70 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50"><i data-lucide="database" class="size-[18px] text-rose-500"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <p class="text-base leading-snug font-semibold text-[#111115]">Student data is scattered</p>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Information spread across multiple systems and files</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-animate="bottom" style="transition-delay: 100ms">
+              <div class="flex flex-col items-center gap-4 rounded-2xl bg-[linear-gradient(to_right,#4E36FE,#8064FD,#9D68FF,#9E4EE7,#9810FA,#6845BA,#28219F)] px-8 py-12 text-center">
+                <p class="max-w-2xl text-xl leading-snug font-bold text-white sm:text-2xl">Axis brings everything into one place so you can run your school with clarity and confidence.</p>
+                <p class="text-sm text-[#FFFFFF]">One system. Complete visibility. Peace of mind.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== FEATURES ===================== -->
+        <section id="features" class="px-4 py-12 lg:py-16">
+          <div class="max-w-9xl mx-auto flex flex-col gap-10">
+            <div data-animate="bottom">
+              <div class="flex flex-col gap-3">
+                <span class="bg-bg-basic-sky-contrast inline-flex w-fit items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                  <i data-lucide="sparkles" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black fill-black"></i>
+                  Features
+                </span>
+                <h2 class="max-w-xl text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Everything you need to run your school, without the stress</h2>
+              </div>
+            </div>
+
+            <!-- Feature 1: CBT -->
+            <div data-animate="bottom" style="transition-delay: 50ms">
+              <div class="flex flex-col gap-8 rounded-2xl border border-zinc-200/70 bg-zinc-50 p-8 lg:flex-row lg:items-stretch">
+                <div class="flex flex-1 flex-col gap-6 lg:justify-between">
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-xl leading-snug font-bold text-[#111115] sm:text-2xl">Run exams smoothly and get results faster</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Create and manage computer-based tests without the usual stress of manual setup, marking, or delays. Axis supports multiple question types and helps you deliver exams with more speed, accuracy, and confidence.</p>
+                  </div>
+                  <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#437dfc]/15"><span class="h-2 w-2 rounded-full bg-[#1C547E]"></span></span><span class="text-sm text-[#111115]">Auto-grade questions</span></div>
+                    <div class="flex items-center gap-2.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#437dfc]/15"><span class="h-2 w-2 rounded-full bg-[#1C547E]"></span></span><span class="text-sm text-[#111115]">Set up tests in minutes</span></div>
+                    <div class="flex items-center gap-2.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#437dfc]/15"><span class="h-2 w-2 rounded-full bg-[#1C547E]"></span></span><span class="text-sm text-[#111115]">Publish results faster</span></div>
+                    <div class="flex items-center gap-2.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#437dfc]/15"><span class="h-2 w-2 rounded-full bg-[#1C547E]"></span></span><span class="text-sm text-[#111115]">Question Bank</span></div>
+                  </div>
+                  <span class="bg-bg-badge-fuchsia inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium text-fuchsia-600"><span class="bg-bg-basic-fuchsia-strong h-1.5 w-1.5 rounded-full"></span>CBT Exams</span>
+                </div>
+                <div class="flex-1 lg:min-h-75">
+                  <div><img src="assets/feature-image.png" alt="CBT Exam Preview" width="400" height="300" class="w-full object-cover" /></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 2 & 3 -->
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              <div data-animate="bottom" style="transition-delay: 50ms">
+                <div class="flex h-full flex-col gap-5 rounded-2xl border border-zinc-200/70 bg-zinc-50 p-8">
+                  <div class="flex flex-col gap-4">
+                    <span class="inline-flex w-fit items-center gap-1.5 rounded-full bg-purple-50 px-2.5 py-1 text-xs font-medium text-purple-600"><span class="h-1.5 w-1.5 rounded-full bg-purple-500"></span>Parent Portal</span>
+                    <h3 class="text-xl leading-snug font-bold text-[#111115]">Give parents instant access to results, anytime</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Parents can access results, track payments, and stay updated without constant follow-ups.</p>
+                  </div>
+                  <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+                    <div class="flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+                      <div class="flex items-center gap-1.5"><div class="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-rose-50"><i data-lucide="alert-circle" class="size-[11px] text-rose-500"></i></div><span class="text-[10px] font-medium text-zinc-500">Outstanding Fees</span></div>
+                      <p class="text-lg font-bold text-[#111115]">₦30,000</p>
+                      <button class="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#437dfc] py-2 text-xs font-semibold text-white">Pay now <i data-lucide="arrow-right" class="size-[11px]"></i></button>
+                    </div>
+                    <div class="flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+                      <div class="flex items-center gap-1.5"><div class="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-50"><i data-lucide="check-circle-2" class="size-[11px] text-emerald-500"></i></div><span class="text-[10px] font-medium text-zinc-500">Academic Result</span></div>
+                      <p class="text-xs leading-snug font-semibold text-[#111115]">Second Term Result Available</p>
+                      <button class="flex w-full items-center justify-center gap-1.5 rounded-lg border border-zinc-200 py-2 text-xs font-medium text-[#111115]">View Results <i data-lucide="arrow-right" class="size-[11px]"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div data-animate="bottom" style="transition-delay: 150ms">
+                <div class="flex h-full flex-col gap-5 rounded-2xl border border-zinc-200/70 bg-zinc-50 p-8">
+                  <div class="flex flex-col gap-4">
+                    <span class="inline-flex w-fit items-center gap-1.5 rounded-full bg-purple-50 px-2.5 py-1 text-xs font-medium text-purple-600"><span class="h-1.5 w-1.5 rounded-full bg-purple-500"></span>Parent &amp; Student Record</span>
+                    <h3 class="text-xl leading-snug font-bold text-[#111115]">Keep all student and parent records in one place</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Stop searching through scattered records. Keep student and parent information in one place, where it&apos;s easy to access, update, and manage.</p>
+                  </div>
+                  <div class="w-full overflow-hidden rounded-xl border border-zinc-200 bg-white">
+                    <div class="block sm:hidden">
+                      <img src="assets/info-card-container.png" alt="Student record preview" width="800" height="300" class="w-full" />
+                    </div>
+                    <div class="hidden sm:block">
+                      <div class="flex items-start justify-between border-b border-zinc-100 p-4">
+                        <div class="flex items-center gap-3">
+                          <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200"><i data-lucide="user" class="size-[16px] text-zinc-500"></i></div>
+                          <div>
+                            <div class="flex items-center gap-2"><span class="text-sm font-semibold text-[#111115]">Damilare John</span><span class="rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-[10px] font-medium text-amber-700">Prefect</span></div>
+                            <p class="text-xs text-zinc-500">JSS 1 A</p>
+                            <p class="text-xs text-zinc-400">GFA/2023/01045</p>
+                          </div>
+                        </div>
+                        <button class="flex shrink-0 items-center gap-1.5 rounded-lg border border-zinc-200 px-2.5 py-1.5 text-xs text-zinc-500 hover:bg-zinc-50"><i data-lucide="pencil" class="size-[10px]"></i>Edit Student Information</button>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 p-4">
+                        <div class="flex items-center gap-1.5"><span class="text-xs text-zinc-500">Status:</span><span class="rounded-full bg-green-50 px-2 py-0.5 text-[10px] font-medium text-green-700">Active</span></div>
+                        <div class="flex items-center gap-1.5"><span class="text-xs text-zinc-500">Linked Parents:</span>
+                          <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-1"><i data-lucide="user" class="size-[11px] text-zinc-400"></i><span class="text-xs text-[#111115]">Ebony John</span></div>
+                            <div class="flex items-center gap-1"><i data-lucide="user" class="size-[11px] text-zinc-400"></i><span class="text-xs text-[#111115]">Samson John</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- And more -->
+            <div data-animate="bottom" style="transition-delay: 50ms">
+              <div class="flex flex-col gap-5">
+                <p class="text-center text-base font-semibold text-[#111115]">And more...</p>
+                <div class="grid grid-cols-1 gap-3 sm:grid-cols-4">
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 transition-opacity duration-200"><i data-lucide="receipt" class="size-[18px] text-violet-500"></i></div><span class="text-sm font-medium text-[#111115]">Fee Management</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 transition-opacity duration-200"><i data-lucide="wallet" class="size-[18px] text-emerald-500"></i></div><span class="text-sm font-medium text-[#111115]">Fees Collection</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 transition-opacity duration-200"><i data-lucide="bar-chart-2" class="size-[18px] text-indigo-500"></i></div><span class="text-sm font-medium text-[#111115]">Expense Records</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-50 transition-opacity duration-200"><i data-lucide="package" class="size-[18px] text-purple-500"></i></div><span class="text-sm font-medium text-[#111115]">Stock Management</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 transition-opacity duration-200"><i data-lucide="megaphone" class="size-[18px] text-cyan-500"></i></div><span class="text-sm font-medium text-[#111115]">Parent Communication</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 transition-opacity duration-200"><i data-lucide="trending-up" class="size-[18px] text-amber-500"></i></div><span class="text-sm font-medium text-[#111115]">Teacher Portal</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 transition-opacity duration-200"><i data-lucide="user" class="size-[18px] text-teal-500"></i></div><span class="text-sm font-medium text-[#111115]">Student Portal</span></div>
+                  <div class="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-200/70 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 transition-opacity duration-200"><i data-lucide="building-2" class="size-[18px] text-blue-500"></i></div><span class="text-sm font-medium text-[#111115]">Admission Management</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== WHO IS IT FOR ===================== -->
+        <section id="why-choose-us" class="px-4 py-12 lg:py-16">
+          <div class="mx-auto flex max-w-9xl flex-col gap-10">
+            <div data-animate="bottom">
+              <div class="flex flex-col gap-3">
+                <span class="bg-bg-basic-sky-contrast inline-flex w-fit items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                  <i data-lucide="circle-help" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black"></i>
+                  Who Is It for?
+                </span>
+                <h2 class="max-w-2xl text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Whether you&apos;re a small school or large chain, Axis adapts to your needs</h2>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div data-animate="bottom">
+                <div class="flex h-full flex-col gap-5 rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-purple-700"><i data-lucide="building-2" class="size-[20px] text-white"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <h3 class="text-base font-bold text-[#111115]">Private Schools</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">From nursery to secondary, Manage all levels with one system</p>
+                  </div>
+                  <div class="h-px w-full bg-zinc-100"></div>
+                  <ul class="flex flex-col gap-2.5">
+                    <li class="text-sm text-[#4e4e55]">• CBT Platform</li>
+                    <li class="text-sm text-[#4e4e55]">• Parent Portal</li>
+                    <li class="text-sm text-[#4e4e55]">• Attendance Management</li>
+                    <li class="text-sm text-[#4e4e55]">• Billing and Invoice</li>
+                  </ul>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 120ms">
+                <div class="flex h-full flex-col gap-5 rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-600 to-cyan-700"><i data-lucide="bar-chart-2" class="size-[20px] text-white"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <h3 class="text-base font-bold text-[#111115]">School Chains</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Manage multiple branches from one central dashboard</p>
+                  </div>
+                  <div class="h-px w-full bg-zinc-100"></div>
+                  <ul class="flex flex-col gap-2.5">
+                    <li class="text-sm text-[#4e4e55]">• Multi-Branch Support</li>
+                    <li class="text-sm text-[#4e4e55]">• Centralized Data</li>
+                    <li class="text-sm text-[#4e4e55]">• Bulk Student Upload Reporting</li>
+                    <li class="text-sm text-[#4e4e55]">• Branch Comparisons</li>
+                  </ul>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 240ms">
+                <div class="flex h-full flex-col gap-5 rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-600 to-rose-600"><i data-lucide="users" class="size-[20px] text-white"></i></div>
+                  <div class="flex flex-col gap-2">
+                    <h3 class="text-base font-bold text-[#111115]">Growing Schools</h3>
+                    <p class="text-sm leading-relaxed text-[#4e4e55]">Scale effortlessly with an all-in-one solution with flexibility</p>
+                  </div>
+                  <div class="h-px w-full bg-zinc-100"></div>
+                  <ul class="flex flex-col gap-2.5">
+                    <li class="text-sm text-[#4e4e55]">• Easy Onboarding</li>
+                    <li class="text-sm text-[#4e4e55]">• Flexible Pricing</li>
+                    <li class="text-sm text-[#4e4e55]">• Growth Analytics</li>
+                    <li class="text-sm text-[#4e4e55]">• Unlimited Students</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div data-animate="bottom" style="transition-delay: 100ms">
+              <div class="relative overflow-hidden rounded-2xl bg-[#f5f0d0] px-8 py-12 text-center">
+                <svg class="pointer-events-none absolute inset-0 h-full w-full opacity-25" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <pattern id="giraffe-spots" x="0" y="0" width="130" height="130" patternUnits="userSpaceOnUse">
+                      <polygon points="18,4 42,2 56,16 50,38 28,42 8,28" fill="#c2a84e" />
+                      <polygon points="72,8 95,5 110,20 103,44 80,48 62,33" fill="#c2a84e" />
+                      <polygon points="4,62 28,57 42,72 36,95 12,98 -4,82" fill="#c2a84e" />
+                      <polygon points="62,60 86,54 100,70 93,93 68,97 50,80" fill="#c2a84e" />
+                      <polygon points="100,68 122,62 134,78 127,100 104,104 88,90" fill="#c2a84e" />
+                      <polygon points="28,98 52,93 66,108 60,126 36,128 18,116" fill="#c2a84e" />
+                      <polygon points="86,96 108,90 122,105 115,124 92,127 74,114" fill="#c2a84e" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#giraffe-spots)" />
+                </svg>
+                <div class="relative z-10 flex flex-col items-center gap-4">
+                  <h3 class="text-lg font-bold text-[#111115]">Explore Axis for Yourself</h3>
+                  <p class="max-w-md text-sm leading-relaxed text-[#4e4e55]">Instantly access a live demo—see how easy it is to manage exams, results, and more.</p>
+                  <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="inline-flex items-center gap-2 rounded-full bg-[#437dfc] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue-600 hover:shadow-md active:scale-[0.98]">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== HOW IT WORKS / WHY CHOOSE US ===================== -->
+        <section class="px-4 py-12 lg:py-16">
+          <div class="max-w-9xl mx-auto">
+            <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
+              <div data-animate="left" class="flex flex-1 flex-col gap-6">
+                <div class="flex flex-col gap-3">
+                  <span class="bg-bg-basic-sky-contrast inline-flex w-fit items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                    <i data-lucide="sparkles" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black fill-black"></i>
+                    Why Choose Us
+                  </span>
+                  <h2 class="max-w-lg text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Transform How Your School Works</h2>
+                </div>
+
+                <div class="divide-y divide-zinc-200" id="why-accordion">
+                  <div data-acc-item>
+                    <button data-acc-btn class="flex w-full items-center justify-between gap-4 py-4 text-left">
+                      <span data-acc-label class="text-sm sm:text-base font-normal text-[#111115]">1. Save hours on administrative work</span>
+                      <i data-lucide="chevron-down" data-acc-chevron class="size-[16px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                    </button>
+                    <p data-acc-panel class="hidden pb-4 text-sm leading-relaxed text-[#4e4e55]">Automate exams, results, and records so your staff spends less time on manual tasks.</p>
+                  </div>
+                  <div data-acc-item>
+                    <button data-acc-btn class="flex w-full items-center justify-between gap-4 py-4 text-left">
+                      <span data-acc-label class="text-sm sm:text-base font-normal text-[#111115]">2. Reduce errors and improve accuracy</span>
+                      <i data-lucide="chevron-down" data-acc-chevron class="size-[16px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                    </button>
+                    <p data-acc-panel class="hidden pb-4 text-sm leading-relaxed text-[#4e4e55]">System-generated results and auto-calculations eliminate the human errors that come with manual processing.</p>
+                  </div>
+                  <div data-acc-item>
+                    <button data-acc-btn class="flex w-full items-center justify-between gap-4 py-4 text-left">
+                      <span data-acc-label class="text-sm sm:text-base font-normal text-[#111115]">3. Keep parents informed and satisfied</span>
+                      <i data-lucide="chevron-down" data-acc-chevron class="size-[16px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                    </button>
+                    <p data-acc-panel class="hidden pb-4 text-sm leading-relaxed text-[#4e4e55]">Send automated notifications and give parents a portal to track results, fees, and attendance at any time.</p>
+                  </div>
+                  <div data-acc-item>
+                    <button data-acc-btn class="flex w-full items-center justify-between gap-4 py-4 text-left">
+                      <span data-acc-label class="text-sm sm:text-base font-normal text-[#111115]">4. Stay organized and in control</span>
+                      <i data-lucide="chevron-down" data-acc-chevron class="size-[16px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                    </button>
+                    <p data-acc-panel class="hidden pb-4 text-sm leading-relaxed text-[#4e4e55]">All your school data — students, staff, finances, and results — is organised and accessible in one place.</p>
+                  </div>
+                  <div data-acc-item>
+                    <button data-acc-btn class="flex w-full items-center justify-between gap-4 py-4 text-left">
+                      <span data-acc-label class="text-sm sm:text-base font-normal text-[#111115]">5. Access everything from anywhere</span>
+                      <i data-lucide="chevron-down" data-acc-chevron class="size-[16px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                    </button>
+                    <p data-acc-panel class="hidden pb-4 text-sm leading-relaxed text-[#4e4e55]">Axis is cloud-based. Your admin team, teachers, and parents can log in from any device, anytime.</p>
+                  </div>
+                </div>
+
+                <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="inline-flex w-fit items-center gap-2 rounded-full bg-[#437dfc] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue-600 hover:shadow-md active:scale-[0.98]">Transform Your School Now</a>
+              </div>
+
+              <div data-animate="right" style="transition-delay: 150ms" class="w-full overflow-hidden rounded-2xl lg:h-120 lg:shrink-0">
+                <img src="assets/how-it-works.png" alt="School growth analytics illustration" width="480" height="420" class="h-full w-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== TESTIMONIALS ===================== -->
+        <section class="px-4 py-12 lg:py-16">
+          <div class="mx-auto flex max-w-9xl flex-col gap-10">
+            <div data-animate="bottom">
+              <div class="flex flex-col gap-3">
+                <span class="bg-bg-basic-sky-contrast inline-flex w-fit items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                  <i data-lucide="circle-user" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black"></i>
+                  Testimonials
+                </span>
+                <h2 class="max-w-lg text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Real Stories From Real Schools Using Axis</h2>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+              <div data-animate="bottom">
+                <div class="flex h-full flex-col justify-between gap-6 rounded-2xl p-6 bg-green-50">
+                  <p class="text-sm leading-relaxed text-[#111115]">&ldquo;Result processing that used to take 3 days now takes 4 hours. And we're confident there are no errors. Axis has transformed our operations completely.&rdquo;</p>
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white bg-green-500">JA</div>
+                    <div><p class="text-sm font-semibold text-[#111115]">Mrs Jumoke Ali</p><p class="text-xs text-[#6f6f77]">Principal, Amoke Oge</p></div>
+                  </div>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 120ms">
+                <div class="flex h-full flex-col justify-between gap-6 rounded-2xl p-6 bg-purple-50">
+                  <p class="text-sm leading-relaxed text-[#111115]">&ldquo;Our parents used to call us every week asking for results and fee balances. Now they check it themselves. Axis saved us hours of phone calls every term.&rdquo;</p>
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white bg-purple-500">CO</div>
+                    <div><p class="text-sm font-semibold text-[#111115]">Mr Chukwuemeka Obi</p><p class="text-xs text-[#6f6f77]">Director, Sunlight Academy</p></div>
+                  </div>
+                </div>
+              </div>
+              <div data-animate="bottom" style="transition-delay: 240ms">
+                <div class="flex h-full flex-col justify-between gap-6 rounded-2xl p-6 bg-amber-50">
+                  <p class="text-sm leading-relaxed text-[#111115]">&ldquo;Switching from spreadsheets to Axis was the best decision we made. Our staff is less stressed, our records are cleaner, and our parents are happier.&rdquo;</p>
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white bg-amber-500">AF</div>
+                    <div><p class="text-sm font-semibold text-[#111115]">Mrs Adeyemi Fatima</p><p class="text-xs text-[#6f6f77]">Head Teacher, Bright Stars School</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== CTA STRIP ===================== -->
+        <section class="px-4 py-8">
+          <div class="relative mx-auto max-w-9xl overflow-hidden rounded-2xl bg-[#56D197]/10 px-8 py-16 text-center">
+            <svg class="pointer-events-none absolute inset-0 h-full w-full opacity-60" viewBox="0 0 1398 302" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M356.489 100.232C361.612 99.0893 369.175 98.8624 374.448 99.8035C386.579 101.969 391.34 111.702 397.588 121.223L411.201 142.076L458.746 214.857C447.064 216.001 435.368 217.021 423.664 217.918L408.841 194.502C398.403 195.211 387.459 196.302 376.997 197.19L332.337 200.987C328.957 209.579 325.436 218.115 321.775 226.592C310.176 227.699 298.566 228.687 286.946 229.555C288.392 227.129 290.594 221.566 291.81 218.713L300.272 198.867L326.312 138.833C328.068 134.734 329.929 130.468 331.65 126.37C337.338 112.826 340.718 103.618 356.489 100.232ZM364.102 126.742C361.12 132.091 357.806 140.608 355.379 146.432L342.544 177.059L369.524 174.748L394.864 172.585C391.43 167.27 366.76 127.622 364.102 126.742Z" fill="#E7B413" fill-opacity="0.25" />
+              <path d="M714.685 70.043C745.445 66.9366 777.052 64.5882 807.925 61.9448C808.081 69.2385 808.62 77.0341 803.709 83.0498C801.025 86.3332 796.025 88.6175 791.944 89.6038C784.682 91.3586 776.206 91.6467 768.681 92.3104C753.927 93.6111 739.131 94.6777 724.387 96.0414C721.181 96.3928 716.778 97.2209 714.755 99.9565C711.589 104.23 712.439 114.574 717.754 116.888C722.735 119.054 730.134 117.775 735.486 117.298L767.82 114.418C793.202 112.192 815.515 109.983 819.54 143.025C823.115 172.372 813.329 184.112 783.81 187.107L689.04 195.165C688.643 187.786 688.724 180.624 693.521 174.366C696.077 171.032 700.58 168.684 704.597 167.645C711.609 165.832 719.965 165.53 727.239 164.887C743.932 163.412 760.68 162.209 777.366 160.656C780.988 160.268 785.204 159.094 787.442 156.02C790.408 151.943 789.469 140.596 784.337 138.494C779.806 136.638 772.575 137.784 767.646 138.216L739.737 140.681C713.708 142.987 686.853 148.36 682.32 113.738C678.778 86.6528 687.246 73.699 714.685 70.043Z" fill="#E7B413" fill-opacity="0.25" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M520.991 139.145C562.685 68.0484 624.703 18.0435 710.371 18.2172C688.591 22.4544 667.78 30.667 648.977 42.4442C643.768 45.6756 638.949 49.3181 633.847 52.7179C631.087 55.546 626.595 58.7201 623.474 61.3571C618.296 65.8075 613.292 70.4559 608.47 75.2916C588.92 94.7827 572.882 119.215 558.358 142.518C565.199 149.231 572.113 155.867 579.098 162.425C580.83 164.07 588.286 171.09 589.437 172.665C596.853 179.002 603.846 186.452 610.983 193.128C613.307 195.299 617.101 199.342 619.447 201.183C609.388 202.102 582.299 206.508 575.287 201.091C571.321 199.343 546.194 174.487 541.247 169.765C537.44 174.708 533.788 180.485 529.905 185.626C521.684 196.439 512.607 206.573 502.761 215.93C465.496 251.257 418.886 271.069 367.198 269.72C378.161 267.041 387.135 264.815 397.766 260.582C438.819 244.236 469.638 213.954 495.087 178.702C500.236 171.57 504.698 164.516 509.592 157.275C512.66 151.349 517.543 145.025 520.991 139.145ZM395.808 47.4098C399.747 46.313 405.616 46.5313 409.676 46.5565C450.567 46.8124 485.176 71.9445 513.023 99.5796C517.211 103.735 521.856 107.825 525.768 112.264C522.439 118.235 513.033 133.81 509.119 139.232C483.317 114.726 460.385 86.7811 426.958 72.7292C421.806 70.6181 416.476 68.9717 411.031 67.8084C409.894 67.5598 403.097 66.2439 402.366 65.958C362.223 62.7218 329.61 82.1325 302.796 110.484C304.875 106.781 312.734 96.2161 315.499 92.8673C335.547 68.5853 364.219 50.7454 395.808 47.4098Z" fill="#E7B413" fill-opacity="0.25" />
+              <path d="M632.617 77.0571C640.665 76.1706 649.313 75.5713 657.418 74.8625L667.925 197.02L660.234 197.727C655.79 198.13 640.504 199.927 637.219 198.881C635.05 195.075 634.463 182.905 634.048 178.12L631.867 152.813L628.178 109.68C627.493 101.684 626.75 93.7014 626.253 85.6908C625.902 80.0916 627.398 78.4516 632.617 77.0571Z" fill="#E7B413" fill-opacity="0.25" />
+            </svg>
+            <div data-animate="bottom" class="relative z-10 flex flex-col items-center gap-5">
+              <h2 class="max-w-xl text-3xl font-bold leading-snug text-[#111115] sm:text-4xl">Take the first step toward a better school system</h2>
+              <p class="max-w-md text-base leading-relaxed text-[#4e4e55]">Join schools already using Axis to save time, reduce errors, and stay organized.</p>
+              <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="inline-flex items-center gap-2 rounded-full bg-[#437dfc] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue-500 hover:shadow-md active:scale-[0.98]">Get Started</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== PRICING ===================== -->
+        <section id="pricing" class="px-4 py-8">
+          <div class="mx-auto flex max-w-9xl flex-col items-center gap-10 rounded-2xl bg-white px-8 py-14 shadow-[0px_1px_4px_0px_rgba(12,12,13,0.1)] lg:px-16">
+            <div data-animate="bottom" class="flex flex-col items-center gap-3 text-center">
+              <span class="bg-bg-basic-sky-contrast inline-flex items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                <i data-lucide="sparkles" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black fill-black"></i>
+                Pricing
+              </span>
+              <h2 class="text-4xl leading-tight font-medium tracking-tight text-[#111115]">Simple, Transparent &amp; Flexible Pricing</h2>
+            </div>
+
+            <div data-animate="bottom" style="transition-delay: 100ms" class="flex w-full max-w-lg flex-col items-center gap-3">
+              <p class="text-base font-semibold text-[#111115]">Select Student Count</p>
+              <div class="flex w-full gap-0.5 rounded-full bg-zinc-100 p-0.5" id="student-count-toggle">
+                <button data-count="1-200" class="flex-1 rounded-full py-1.5 text-sm font-medium transition-all border border-zinc-200/70 bg-white text-[#111115] shadow">1-200</button>
+                <button data-count="201-400" class="flex-1 rounded-full py-1.5 text-sm font-medium transition-all text-[#6f6f77] hover:text-[#111115]">201-400</button>
+                <button data-count="401+" class="flex-1 rounded-full py-1.5 text-sm font-medium transition-all text-[#6f6f77] hover:text-[#111115]">401+</button>
+              </div>
+            </div>
+
+            <div data-animate="bottom" style="transition-delay: 150ms" class="flex w-full max-w-2xl flex-col gap-6">
+              <div class="flex w-fit gap-0.5 rounded-full bg-zinc-100 p-0.5" id="billing-toggle">
+                <button data-billing="Termly" class="rounded-full px-5 py-1.5 text-sm font-medium transition-all border border-zinc-200/70 bg-white text-[#111115] shadow">Termly</button>
+                <button data-billing="Yearly" class="rounded-full px-5 py-1.5 text-sm font-medium transition-all text-[#6f6f77] hover:text-[#111115]">Yearly</button>
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <!-- Standard -->
+                <div class="overflow-hidden rounded-lg border border-zinc-200">
+                  <div class="flex flex-col gap-5 p-4">
+                    <div class="flex items-center justify-between">
+                      <p class="text-sm font-medium text-[#111115]">Standard</p>
+                      <span class="rounded-md border border-zinc-200 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">Current Plan</span>
+                    </div>
+                    <div class="flex items-baseline gap-1">
+                      <span id="std-price" class="text-base font-medium text-[#111115]">₦1,200</span>
+                      <span class="text-xs text-[#6f6f77]">per student</span>
+                    </div>
+                    <a href="https://app.axisbydigenty.com/auth/staff?step=signup" class="w-full rounded-md bg-[#437dfc] py-2 text-center text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600">Subscribe</a>
+                  </div>
+                  <div class="h-1.5 border-t border-zinc-100 bg-zinc-50"></div>
+                  <div class="flex flex-col gap-5 p-6">
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Everything in Freemium,</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Academics and exams management</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Financial summary and analytics</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI powered Whatsapp Bot as parent portal</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI powered National Exams Mock Testing (using past questions) and preparation advisory/learning path - This would cut across all countries where we operate</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI assistant for staff, (assessment creation from question bank, business growth metrics, debt and expense management recommendations, etc.)</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI question bank auto create from lesson notes, textbooks and curriculum</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">16+ modules</span></div>
+                    <button class="text-left text-xs font-medium text-[#111115] transition-colors hover:text-[#437dfc]">See all available features</button>
+                  </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="overflow-hidden rounded-lg border border-zinc-200">
+                  <div class="flex flex-col gap-5 p-4">
+                    <p class="text-sm font-medium text-[#111115]">Advanced</p>
+                    <div class="flex items-baseline gap-1">
+                      <span id="adv-price" class="text-base font-medium text-[#111115]">₦1,500</span>
+                      <span class="text-xs text-[#6f6f77]">per student</span>
+                    </div>
+                    <button disabled class="w-full cursor-not-allowed rounded-md border border-zinc-200 bg-zinc-100 py-2 text-sm font-medium text-zinc-400">Coming soon</button>
+                  </div>
+                  <div class="h-1.5 border-t border-zinc-100 bg-zinc-50"></div>
+                  <div class="flex flex-col gap-5 p-6">
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Everything in Standard,</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Online assignments &amp; E-notes</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">Computer-based testing and examination</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI powered Whatsapp Bot as parent portal</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI powered National Exams Mock Testing (using past questions) and preparation advisory/learning path - This would cut across all countries where we operate</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI assistant for staff, (assessment creation from question bank, business growth metrics, debt and expense management recommendations, etc.)</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">AI question bank auto create from lesson notes, textbooks and curriculum</span></div>
+                    <div class="flex items-start gap-2.5"><i data-lucide="check" class="mt-0.5 size-[16px] shrink-0 text-[#437dfc]"></i><span class="text-sm text-[#4e4e55]">19+ modules</span></div>
+                    <button class="text-left text-xs font-medium text-[#111115] transition-colors hover:text-[#437dfc]">See all available features</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== FAQ ===================== -->
+        <section class="px-4 py-12 lg:py-16">
+          <div class="mx-auto flex max-w-9xl flex-col gap-10">
+            <div data-animate="bottom">
+              <div class="flex flex-col items-center gap-3 text-center">
+                <span class="bg-bg-basic-sky-contrast inline-flex w-fit items-center gap-2 rounded-full px-2 py-1.5 text-xs font-medium text-[#4e4e55]">
+                  <i data-lucide="sparkles" class="size-5 rounded-full bg-[linear-gradient(to_right,#00EEFF_0%,#50BCFF_50%,#A9A5FF_100%)] p-1 text-black fill-black"></i>
+                  FAQ
+                </span>
+                <h2 class="max-w-lg text-3xl leading-tight font-bold text-[#111115] sm:text-4xl">Have questions? We&apos;ve got answers</h2>
+              </div>
+            </div>
+
+            <div data-animate="bottom" style="transition-delay: 100ms" class="mx-auto w-full max-w-3xl">
+              <div class="flex flex-col gap-3" id="faq-accordion">
+                <button data-faq-btn class="group w-full rounded-2xl border px-6 py-4 text-left transition-all duration-200 border-zinc-200/70 bg-zinc-50 hover:border-zinc-200 hover:bg-white">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1">
+                      <p class="text-sm font-semibold text-[#111115] sm:text-base">Can I cancel my subscription at any time?</p>
+                      <p data-faq-panel class="mt-3 hidden text-sm leading-relaxed text-[#4e4e55]">Yes. You can cancel your subscription at any time from your account settings. There are no cancellation fees and your data remains accessible until the end of your billing period.</p>
+                    </div>
+                    <i data-lucide="chevron-down" data-faq-chevron class="mt-0.5 size-[17px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                  </div>
+                </button>
+                <button data-faq-btn class="group w-full rounded-2xl border px-6 py-4 text-left transition-all duration-200 border-zinc-200/70 bg-zinc-50 hover:border-zinc-200 hover:bg-white">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1">
+                      <p class="text-sm font-semibold text-[#111115] sm:text-base">How does the student count pricing work?</p>
+                      <p data-faq-panel class="mt-3 hidden text-sm leading-relaxed text-[#4e4e55]">Pricing is per student, per term (or per year if you choose annual billing). You select your student count tier at the start of each billing period. If your enrolment grows, you can upgrade your tier at any time.</p>
+                    </div>
+                    <i data-lucide="chevron-down" data-faq-chevron class="mt-0.5 size-[17px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                  </div>
+                </button>
+                <button data-faq-btn class="group w-full rounded-2xl border px-6 py-4 text-left transition-all duration-200 border-zinc-200/70 bg-zinc-50 hover:border-zinc-200 hover:bg-white">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1">
+                      <p class="text-sm font-semibold text-[#111115] sm:text-base">Is my school's data secure on Axis?</p>
+                      <p data-faq-panel class="mt-3 hidden text-sm leading-relaxed text-[#4e4e55]">Absolutely. Axis uses industry-standard encryption for data at rest and in transit. Access is role-based, meaning staff only see what they need. We do not sell or share your school's data with third parties.</p>
+                    </div>
+                    <i data-lucide="chevron-down" data-faq-chevron class="mt-0.5 size-[17px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                  </div>
+                </button>
+                <button data-faq-btn class="group w-full rounded-2xl border px-6 py-4 text-left transition-all duration-200 border-zinc-200/70 bg-zinc-50 hover:border-zinc-200 hover:bg-white">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1">
+                      <p class="text-sm font-semibold text-[#111115] sm:text-base">Can I try Axis before subscribing?</p>
+                      <p data-faq-panel class="mt-3 hidden text-sm leading-relaxed text-[#4e4e55]">Yes — we offer a free demo account that lets you explore the full platform with sample data. You can access it immediately, no credit card required.</p>
+                    </div>
+                    <i data-lucide="chevron-down" data-faq-chevron class="mt-0.5 size-[17px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                  </div>
+                </button>
+                <button data-faq-btn class="group w-full rounded-2xl border px-6 py-4 text-left transition-all duration-200 border-zinc-200/70 bg-zinc-50 hover:border-zinc-200 hover:bg-white">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1">
+                      <p class="text-sm font-semibold text-[#111115] sm:text-base">What modules are included in the Standard plan?</p>
+                      <p data-faq-panel class="mt-3 hidden text-sm leading-relaxed text-[#4e4e55]">The Standard plan includes 16+ modules covering academics, fee management, attendance, parent portal, staff management, and more. You can view the full feature list on the pricing page.</p>
+                    </div>
+                    <i data-lucide="chevron-down" data-faq-chevron class="mt-0.5 size-[17px] shrink-0 text-[#6f6f77] transition-transform duration-200"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ===================== FOOTER ===================== -->
+      <footer class="px-4 pb-6 pt-2">
+        <div data-animate="bottom">
+          <div class="mx-auto max-w-9xl overflow-hidden rounded-2xl bg-white shadow-[0px_1px_4px_0px_rgba(12,12,13,0.1)]">
+            <div class="flex flex-col gap-4 px-8 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+              <a href="#"><img src="assets/Logomark.svg" alt="Axis" width="65" height="27" /></a>
+              <nav class="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <a href="#why-it-matters" class="text-sm text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]">Why It Matters</a>
+                <a href="#features" class="text-sm text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]">Features</a>
+                <a href="#why-choose-us" class="text-sm text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]">Why Choose Us</a>
+                <a href="#pricing" class="text-sm text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]">Pricing</a>
+              </nav>
+            </div>
+            <div class="mx-8 h-px bg-zinc-100 lg:mx-10"></div>
+            <div class="flex justify-end px-8 py-4 lg:px-10">
+              <a href="mailto:support@axisbydigenty.com" class="inline-flex items-center gap-2 text-sm text-[#4e4e55] transition-colors duration-200 hover:text-[#111115]"><i data-lucide="mail" class="size-[13px]"></i>support@axisbydigenty.com</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
