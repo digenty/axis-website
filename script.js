@@ -106,23 +106,23 @@ if (window.lucide) lucide.createIcons();
 (function () {
   const plans = {
     "1-200": {
-      standard: { Termly: "₦1,200", Yearly: "₦3,000" },
-      advanced: { Termly: "₦1,500", Yearly: "₦4,500" },
+      starter: { Termly: "₦900", Yearly: "₦2,500" },
+      standard: { Termly: "₦1,200", Yearly: "₦3,500" },
     },
     "201-400": {
-      standard: { Termly: "₦1,100", Yearly: "₦1,425" },
-      advanced: { Termly: "₦2,750", Yearly: "₦4,250" },
+      starter: { Termly: "₦800", Yearly: "₦2,400" },
+      standard: { Termly: "₦1,150", Yearly: "₦3,400" },
     },
     "401+": {
-      standard: { Termly: "₦1000", Yearly: "₦1,350" },
-      advanced: { Termly: "₦2,500", Yearly: "₦4,000" },
+      starter: { Termly: "₦800", Yearly: "₦2,300" },
+      standard: { Termly: "₦1,100", Yearly: "₦3,300" },
     },
   };
 
   const countToggle = document.getElementById("student-count-toggle");
   const billingToggle = document.getElementById("billing-toggle");
+  const starterPrice = document.getElementById("starter-price");
   const stdPrice = document.getElementById("std-price");
-  const advPrice = document.getElementById("adv-price");
   if (!countToggle || !billingToggle) return;
 
   let studentCount = "1-200";
@@ -141,8 +141,8 @@ if (window.lucide) lucide.createIcons();
 
   function update() {
     const current = plans[studentCount];
+    starterPrice.textContent = current.starter[billing];
     stdPrice.textContent = current.standard[billing];
-    advPrice.textContent = current.advanced[billing];
     paint(countToggle, "data-count", studentCount);
     paint(billingToggle, "data-billing", billing);
   }
