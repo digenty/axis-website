@@ -143,17 +143,25 @@ if (window.lucide) lucide.createIcons();
     const current = plans[studentCount];
     starterPrice.textContent = current.starter[billing];
     stdPrice.textContent = current.standard[billing];
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    set("modal-starter-price", current.starter[billing]);
+    set("modal-std-price", current.standard[billing]);
+    document.querySelectorAll(".modal-period").forEach((el) => (el.textContent = billing === "Yearly" ? " / year" : " / term"));
+    const mc = document.getElementById("modal-count-toggle");
+    const mb = document.getElementById("modal-billing-toggle");
+    if (mc) paint(mc, "data-count", studentCount);
+    if (mb) paint(mb, "data-billing", billing);
     paint(countToggle, "data-count", studentCount);
     paint(billingToggle, "data-billing", billing);
   }
 
-  countToggle.querySelectorAll("button").forEach((b) =>
+  document.querySelectorAll("#student-count-toggle button, #modal-count-toggle button").forEach((b) =>
     b.addEventListener("click", () => {
       studentCount = b.getAttribute("data-count");
       update();
     }),
   );
-  billingToggle.querySelectorAll("button").forEach((b) =>
+  document.querySelectorAll("#billing-toggle button, #modal-billing-toggle button").forEach((b) =>
     b.addEventListener("click", () => {
       billing = b.getAttribute("data-billing");
       update();
@@ -161,4 +169,24 @@ if (window.lucide) lucide.createIcons();
   );
 
   update();
+})();
+
+// ----- Plans modal -----
+(function () {
+  const modal = document.getElementById("plans-modal");
+  if (!modal) return;
+  const open = () => {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  };
+  const close = () => {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.style.overflow = "";
+  };
+  document.querySelectorAll("[data-open-plans-modal]").forEach((b) => b.addEventListener("click", open));
+  document.getElementById("plans-modal-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 })();

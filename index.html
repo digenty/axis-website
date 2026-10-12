@@ -1146,7 +1146,7 @@
                     >
                       <span
                         class="text-md font-semibold text-[#111115] sm:text-2xl"
-                        >200+</span
+                        >300+</span
                       >
                       <span
                         class="text-xs leading-snug text-[#6f6f77] sm:text-sm"
@@ -1158,7 +1158,7 @@
                     >
                       <span
                         class="text-md font-semibold text-[#111115] sm:text-2xl"
-                        >50+</span
+                        >500+</span
                       >
                       <span
                         class="text-xs leading-snug text-[#6f6f77] sm:text-sm"
@@ -2696,7 +2696,7 @@
         </section>
 
         <!-- ===================== TESTIMONIALS ===================== -->
-        <section class="px-4 py-12 lg:py-16">
+        <!-- <section class="px-4 py-12 lg:py-16">
           <div class="mx-auto flex max-w-9xl flex-col gap-10">
             <div data-animate="bottom">
               <div class="flex flex-col gap-3">
@@ -2796,7 +2796,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!-- ===================== CTA STRIP ===================== -->
         <section class="px-4 py-8">
@@ -2988,6 +2988,8 @@
                       >
                     </div>
                     <button
+                      type="button"
+                      data-open-plans-modal
                       class="text-left text-xs font-medium text-[#111115] transition-colors hover:text-[#437dfc]"
                     >
                       See all available features
@@ -3056,6 +3058,8 @@
                       ><span class="text-sm text-[#4e4e55]">16+ modules</span>
                     </div>
                     <button
+                      type="button"
+                      data-open-plans-modal
                       class="text-left text-xs font-medium text-[#111115] transition-colors hover:text-[#437dfc]"
                     >
                       See all available features
@@ -3066,6 +3070,396 @@
             </div>
           </div>
         </section>
+
+        <!-- ===================== PLANS MODAL ===================== -->
+        <div
+          id="plans-modal"
+          class="fixed inset-0 z-[100] hidden items-end justify-center bg-zinc-900/60 backdrop-blur-sm sm:items-center sm:p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="plans-modal-title"
+        >
+          <div
+            class="relative flex max-h-[94dvh] w-full max-w-4xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:max-h-[92dvh] sm:rounded-3xl"
+          >
+            <div
+              class="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(67,125,252,0.14),transparent)]"
+            ></div>
+            <button
+              id="plans-modal-close"
+              type="button"
+              aria-label="Close"
+              class="absolute right-3 top-3 z-10 rounded-full p-2 text-[#6f6f77] transition-colors hover:bg-zinc-100 hover:text-[#111115] sm:right-5 sm:top-5"
+            >
+              <i data-lucide="x" class="size-5"></i>
+            </button>
+            <div
+              class="relative overflow-y-auto px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-10 sm:px-10 sm:pb-10 sm:pt-12"
+            >
+              <div
+                class="mx-auto flex max-w-xl flex-col items-center gap-3 text-center"
+              >
+                <span
+                  class="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#437dfc]"
+                  >Pricing</span
+                >
+                <h3
+                  id="plans-modal-title"
+                  class="text-3xl font-bold tracking-tight text-[#111115] sm:text-4xl"
+                >
+                  Simple, transparent pricing
+                </h3>
+                <p class="text-sm text-[#6f6f77] sm:text-base">
+                  Unlimited users on every plan. You only pay for the students
+                  you enrol.
+                </p>
+              </div>
+
+              <div
+                class="mx-auto mt-8 flex w-full max-w-xl flex-col items-center gap-4 sm:flex-row sm:items-end sm:justify-center sm:gap-6"
+              >
+                <div class="flex w-full flex-col gap-1.5 sm:w-auto">
+                  <span
+                    class="text-center text-[11px] font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >Students</span
+                  >
+                  <div
+                    id="modal-count-toggle"
+                    role="tablist"
+                    aria-label="Students"
+                    class="flex gap-1 rounded-full bg-zinc-100 p-1 ring-1 ring-inset ring-zinc-200"
+                  >
+                    <button
+                      type="button"
+                      role="tab"
+                      data-count="1-200"
+                      class="flex-1 whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#6f6f77] transition-all hover:text-[#111115] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#437dfc]/50 sm:flex-none sm:px-5"
+                    >
+                      1-200</button
+                    ><button
+                      type="button"
+                      role="tab"
+                      data-count="201-400"
+                      class="flex-1 whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#6f6f77] transition-all hover:text-[#111115] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#437dfc]/50 sm:flex-none sm:px-5"
+                    >
+                      201-400</button
+                    ><button
+                      type="button"
+                      role="tab"
+                      data-count="401+"
+                      class="flex-1 whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#6f6f77] transition-all hover:text-[#111115] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#437dfc]/50 sm:flex-none sm:px-5"
+                    >
+                      401+
+                    </button>
+                  </div>
+                </div>
+                <div class="flex w-full flex-col gap-1.5 sm:w-auto">
+                  <span
+                    class="text-center text-[11px] font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >Billing</span
+                  >
+                  <div
+                    id="modal-billing-toggle"
+                    role="tablist"
+                    aria-label="Billing"
+                    class="flex gap-1 rounded-full bg-zinc-100 p-1 ring-1 ring-inset ring-zinc-200"
+                  >
+                    <button
+                      type="button"
+                      role="tab"
+                      data-billing="Termly"
+                      class="flex-1 whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#6f6f77] transition-all hover:text-[#111115] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#437dfc]/50 sm:flex-none sm:px-5"
+                    >
+                      Termly</button
+                    ><button
+                      type="button"
+                      role="tab"
+                      data-billing="Yearly"
+                      class="flex-1 whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#6f6f77] transition-all hover:text-[#111115] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#437dfc]/50 sm:flex-none sm:px-5"
+                    >
+                      Yearly
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+                <!-- Starter -->
+                <div
+                  class="flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+                >
+                  <h4 class="text-lg font-semibold text-[#111115]">Starter</h4>
+                  <p class="mt-1 text-sm text-[#6f6f77]">
+                    Everything a school needs to run day to day.
+                  </p>
+                  <div class="mt-6 flex items-baseline gap-1.5">
+                    <span
+                      id="modal-starter-price"
+                      class="text-5xl font-bold tracking-tight text-[#111115]"
+                    ></span>
+                    <span class="text-sm text-[#6f6f77]"
+                      >per student<span class="modal-period"></span
+                    ></span>
+                  </div>
+                  <a
+                    href="https://app.axisbydigenty.com/auth/staff?step=signup"
+                    class="mt-6 block rounded-xl border border-zinc-300 bg-white py-3 text-center text-sm font-semibold text-[#111115] transition-colors hover:bg-zinc-50"
+                    >Get started with Starter</a
+                  >
+                </div>
+                <!-- Standard -->
+                <div
+                  class="relative flex flex-col overflow-hidden rounded-2xl bg-[#111115] p-6 shadow-xl ring-1 ring-[#437dfc]/40"
+                >
+                  <div
+                    class="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-[#437dfc]/30 blur-3xl"
+                  ></div>
+                  <div class="relative flex items-center justify-between">
+                    <h4 class="text-lg font-semibold text-white">Standard</h4>
+                    <span
+                      class="rounded-full bg-green-500 px-2.5 py-0.5 text-xs font-semibold text-white"
+                      >Best Offer</span
+                    >
+                  </div>
+                  <p class="relative mt-1 text-sm text-zinc-400">
+                    Starter plus computer-based testing.
+                  </p>
+                  <div class="relative mt-6 flex items-baseline gap-1.5">
+                    <span
+                      id="modal-std-price"
+                      class="text-5xl font-bold tracking-tight text-white"
+                    ></span>
+                    <span class="text-sm text-zinc-400"
+                      >per student<span class="modal-period"></span
+                    ></span>
+                  </div>
+                  <a
+                    href="https://app.axisbydigenty.com/auth/staff?step=signup"
+                    class="relative mt-6 block rounded-xl bg-[#437dfc] py-3 text-center text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-colors hover:bg-blue-500"
+                    >Get started with Standard</a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50/60 p-6 sm:p-8"
+              >
+                <h4 class="text-base font-semibold text-[#111115]">
+                  What's included
+                </h4>
+                <p class="mt-1 text-sm text-[#6f6f77]">
+                  All features are available on both plans unless marked.
+                </p>
+                <div
+                  class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                  <div>
+                    <p
+                      class="mb-3 text-xs font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >
+                      Core
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Unlimited users</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Dashboard</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Settings</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Student &amp; Parent Records</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Classes &amp; Subjects</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Attendance</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Daily Diary</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p
+                      class="mb-3 text-xs font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >
+                      Finance
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Fee Collection</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Fees</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Invoices</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Finance Report</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Expenses</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Stock</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Referrals</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p
+                      class="mb-3 text-xs font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >
+                      Admissions &amp; Communication
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Admission Management</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Communication</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p
+                      class="mb-3 text-xs font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >
+                      Website
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Website Customization</span>
+                      </li>
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span>Domain</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p
+                      class="mb-3 text-xs font-semibold uppercase tracking-wider text-[#6f6f77]"
+                    >
+                      Assessment
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                      <li
+                        class="flex items-start gap-2.5 text-sm text-[#4e4e55]"
+                      >
+                        <span
+                          class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#437dfc]"
+                          ><i data-lucide="check" class="size-3"></i></span
+                        ><span
+                          >CBT<span
+                            class="ml-1.5 rounded-full bg-green-50 px-1.5 py-0.5 align-middle text-[10px] font-semibold text-green-700"
+                            >Standard only</span
+                          ></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- ===================== FAQ ===================== -->
         <section class="px-4 py-12 lg:py-16">
